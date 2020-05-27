@@ -20,7 +20,73 @@ h2 {
     color: #CBC9CF;
 }
 
+.panels {
+  display: flex;
+}
+
 .form-box {
+  /* width: 66%; */
   background-color: #46424D;
   color: #FFF;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  /* display: flex;
+  justify-content: flex-start; */
+}
+
+/* .buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+}  */
+
+.studyB {
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.meditateB {
+  display: grid;
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.exerciseB {
+  display: grid;
+  grid-column-start: 5;
+  grid-row-start: 2;
+}
+
+.acco {
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+}
+
+.min {
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.sec {
+  display: grid;
+  grid-column-start: 3;
+  grid-row-start: 4;
+}
+
+.startB {
+  display: grid;
+  grid-column-start: 3;
+  grid-row-start: 5;
+}
+
+
+.default-words {
+  color: #FFF;
+  /* display: flex;
+  justify-content: center; */
 }
