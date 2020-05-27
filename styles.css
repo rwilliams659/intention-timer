@@ -2,6 +2,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  background-color: #46424D;
+}
+
 header {
   font-size: 12px;
   padding: 10px;
@@ -14,14 +18,16 @@ header {
 
 main {
   background-color: #2B2733;
+  display: flex;
 }
 
 h2 {
     color: #CBC9CF;
 }
 
-.panels {
-  display: flex;
+.new-activities-section {
+  width: 66%;
+  margin: 5px 30px 30px 30px;
 }
 
 .form-box {
@@ -35,22 +41,26 @@ h2 {
 }
 
 
+
 .studyB {
   display: grid;
   grid-column-start: 1;
   grid-row-start: 2;
+  background: Transparent;
 }
 
 .meditateB {
   display: grid;
   grid-column-start: 3;
   grid-row-start: 2;
+  background: Transparent;
 }
 
 .exerciseB {
   display: grid;
   grid-column-start: 5;
   grid-row-start: 2;
+  background: Transparent;
 }
 
 .acco {
@@ -63,7 +73,7 @@ h2 {
 .min {
   display: grid;
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 3;
   grid-row-start: 4;
 }
 
@@ -105,10 +115,24 @@ h2 {
   border-bottom: 1px solid #FFF;
 }
 
+.saved-activities {
+  width: 34%;
+  margin: 5px 30px 30px 30px;
+}
+
+.saved-activities h2 {
+  padding-top: 5px;
+
+}
+
+hr {
+  border: 1px solid #46424D;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 
 
 .default-words {
   color: #FFF;
-  /* display: flex;
-  justify-content: center; */
+  text-align: center;
 }
