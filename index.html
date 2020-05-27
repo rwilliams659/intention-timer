@@ -14,12 +14,11 @@
 
     <h2>New Activity</h2>
       <form class="form-box" action="index.html" method="post">
-        <h3>Select a category:</h3>
+        <h4>Select a category:</h4>
           <!-- <section class="buttons"> -->
-<!-- Commented out "buttons" so every button could be moved seperately -->
-            <button type="button" class="studyB"></button>
-            <button type="button" class="meditateB"></button>
-            <button type="button" class="exerciseB"></button>
+            <button type="button" class="studyB"><img src="assets/study.svg" alt="light-bulb">Study</button>
+            <button type="button" class="meditateB"><img src="assets/meditate.svg" alt="crown">Meditate</button>
+            <button type="button" class="exerciseB"><img src="assets/exercise.svg" alt="sneaker">Exercise</button>
           <!-- </section> -->
           <section class="acco">
             <label for="accomplishment">What would you like to accomplish during this time?</label>
@@ -33,9 +32,10 @@
             <label for="seconds">Seconds</label>
             <input type="number" name="seconds" id="seconds">
           </section>
-          <section class="startB">
-            <input type="submit" value="START ACTIVITY">
-          </section>
+          <!-- <section class="startB"> -->
+            <input type="submit" value="START ACTIVITY" class="startB">
+            // Trying to adjust button height
+          <!-- </section> -->
         </form>
     </section>
     <hr>
@@ -47,8 +47,8 @@
       </section>
     </section>
   </main>
-  <script src="src/activity.js"></script>
-  <script src="src/main.js"></script>
+  <!-- <script src="src/activity.js"></script>
+  <script src="src/main.js"></script> -->
 </body>
 
 

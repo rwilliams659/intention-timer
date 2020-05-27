@@ -36,31 +36,57 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  padding: 25px;
+  padding: 10px 80px 10px 80px;
   grid-row-gap: 25px;
+  border-radius: 1%;
+  box-shadow: 5px 5px 5px #202020;
 }
 
+.form-box img {
+  height: 25px;
+  width: 25px;
+}
 
+.form-box button {
+  background: Transparent;
+  color: #FFF;
+  border-radius: 5%;
+  border: solid 1.5px;
+  height: 55px;
+  width: 125px;
+}
+
+.form-box h4 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
 
 .studyB {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   grid-column-start: 1;
   grid-row-start: 2;
-  background: Transparent;
 }
 
 .meditateB {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   grid-column-start: 3;
   grid-row-start: 2;
-  background: Transparent;
+
 }
 
 .exerciseB {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   grid-column-start: 5;
   grid-row-start: 2;
-  background: Transparent;
 }
 
 .acco {
@@ -89,6 +115,9 @@ h2 {
   grid-column-start: 4;
   grid-column-end: 6;
   grid-row-start: 5;
+  height: 80%;
+  width: 80%;
+
 }
 
 #accomplishment {
@@ -122,7 +151,6 @@ h2 {
 
 .saved-activities h2 {
   padding-top: 5px;
-
 }
 
 hr {
