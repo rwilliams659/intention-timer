@@ -1,0 +1,26 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  font-size: 12px;
+  padding: 10px;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #46424D;
+}
+
+main {
+  background-color: #2B2733;
+}
+
+h2 {
+    color: #CBC9CF;
+}
+
+.form-box {
+  background-color: #46424D;
+  color: #FFF;
+}
