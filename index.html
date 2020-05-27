@@ -10,13 +10,10 @@
     </h1>
   </header>
   <main>
+    <section class="new-activities-section">
 
     <h2>New Activity</h2>
-    <section class="panels">
-<!-- added a panels/class/section to seperate the form box(left side) from the saved activities(right side)  -->
-    <section class="form-box">
-      <!-- <form class="" action="index.html" method="post"> -->
-<!-- Had to comment above line out to split things up within the form-box -->
+      <form class="form-box" action="index.html" method="post">
         <h3>Select a category:</h3>
           <!-- <section class="buttons"> -->
 <!-- Commented out "buttons" so every button could be moved seperately -->
@@ -24,7 +21,6 @@
             <button type="button" class="meditateB"></button>
             <button type="button" class="exerciseB"></button>
           <!-- </section> -->
-          <!-- <section class="inputs"> -->
           <section class="acco">
             <label for="accomplishment">What would you like to accomplish during this time?</label>
             <input type="text" name="accomplishment" id="accomplishment">
@@ -40,16 +36,15 @@
           <section class="startB">
             <input type="submit" value="START ACTIVITY">
           </section>
-          <!-- </section> -->
-      <!-- </form> -->
+        </form>
     </section>
-      <section class="savedActivities">
+    <hr>
+      <section class="saved-activities">
       <h2>Past Activities</h2>
       <section class="default-words">
         <p>You haven't logged any activities yet.</p>
         <p>Complete the form to the left to get started!</p>
       </section>
-    </section>
     </section>
   </main>
   <script src="src/activity.js"></script>
