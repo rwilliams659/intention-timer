@@ -5,7 +5,6 @@ activityForm.addEventListener('click', clickHandler);
 
 
 function clickHandler(event) {
-  console.log(event.target);
   if (event.target.classList.contains('form-button')) {
     changeBtnColor(event);
   }
@@ -13,7 +12,6 @@ function clickHandler(event) {
 
 
 function changeBtnColor(event) {
-  console.log(event.target.className);
   if (event.target.classList.contains('study-btn')) {
     event.target.classList.add('study-btn-active');
     var studyIcon = document.querySelector('.study-passive');

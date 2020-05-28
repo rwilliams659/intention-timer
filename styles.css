@@ -39,8 +39,6 @@ h2 {
   color: white;
   border-radius: 1%;
   box-shadow: 5px 5px 5px #202020;
-
-
 }
 
 .buttons {
@@ -66,10 +64,12 @@ h2 {
   border: 1.5px solid #B3FD78;
   color: #B3FD78;
 }
+
 .meditate-btn-active {
   color: #C278FD;
   border-color: #C278FD;
 }
+
 .exercise-btn-active {
   color: #FD8078;
   border-color: #FD8078;
