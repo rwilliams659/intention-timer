@@ -19,6 +19,7 @@ header {
 main {
   background-color: #2B2733;
   display: flex;
+  height: 100%;
 }
 
 h2 {
@@ -37,7 +38,7 @@ h2 {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   padding: 10px 80px 10px 80px;
-  grid-row-gap: 25px;
+  grid-row-gap: 45px;
   border-radius: 1%;
   box-shadow: 5px 5px 5px #202020;
 }
@@ -56,12 +57,14 @@ h2 {
   width: 125px;
 }
 
-.form-box h4 {
+.select-category {
+  display: flex;
+  align-items: flex-end;
   grid-column-start: 1;
   grid-column-end: 3;
 }
 
-.studyB {
+.study-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -70,17 +73,16 @@ h2 {
   grid-row-start: 2;
 }
 
-.meditateB {
+.meditate-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   grid-column-start: 3;
   grid-row-start: 2;
-
 }
 
-.exerciseB {
+.exercise-btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,14 +112,20 @@ h2 {
   grid-row-start: 4;
 }
 
-.startB {
-  display: grid;
+.start-button-container {
   grid-column-start: 4;
   grid-column-end: 6;
   grid-row-start: 5;
-  height: 80%;
-  width: 80%;
+  display: flex;
+  justify-content: flex-end;
 
+}
+.startB {
+  -webkit-appearance: none;
+  height: 35px;
+  width: 80%;
+  border-radius: 5%;
+  font-size: 14px;
 }
 
 #accomplishment {
