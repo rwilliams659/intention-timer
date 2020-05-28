@@ -15,11 +15,18 @@ function clickHandler(event) {
 function changeBtnColor(event) {
   console.log(event.target.className);
   if (event.target.classList.contains('study-btn')) {
-    event.target.classList.remove('study-btn');
     event.target.classList.add('study-btn-active');
-    console.log(event.target.classList);
     var studyIcon = document.querySelector('.study-passive');
-    console.log(studyIcon);
     studyIcon.src = 'assets/study-active.svg';
+  }
+  if (event.target.classList.contains('meditate-btn')) {
+    event.target.classList.add('meditate-btn-active');
+    var meditateIcon = document.querySelector('.meditate-passive');
+    meditateIcon.src = 'assets/meditate-active.svg';
+  }
+  if (event.target.classList.contains('exercise-btn')) {
+    event.target.classList.add('exercise-btn-active');
+    var exerciseIcon = document.querySelector('.exercise-passive');
+    exerciseIcon.src = 'assets/exercise-active.svg';
   }
 }
