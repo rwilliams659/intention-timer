@@ -10,31 +10,29 @@
   </header>
   <main>
     <section class="new-activities-section">
-    <h2>New Activity</h2>
+      <h2>New Activity</h2>
       <form class="form-box" action="index.html" method="post">
-        <section class="select-category">
-          <h4>Select a category:</h4>
+        <label for="button-selectors">Select a category:</label>
+        <section class="buttons">
+          <button type="button" class="form-button" id="study-btn"><img src="assets/study.svg" alt="light-bulb">Study</button>
+          <button type="button" class="form-button" id="meditate-btn"><img src="assets/meditate.svg" alt="crown">Meditate</button>
+          <button type="button" class="form-button" id="exercise-btn"><img src="assets/exercise.svg" alt="sneaker">Exercise</button>
         </section>
-          <!-- <section class="buttons"> -->
-            <button type="button" class="study-btn"><img src="assets/study.svg" alt="light-bulb">Study</button>
-            <button type="button" class="meditate-btn"><img src="assets/meditate.svg" alt="crown">Meditate</button>
-            <button type="button" class="exercise-btn"><img src="assets/exercise.svg" alt="sneaker">Exercise</button>
-          <!-- </section> -->
-          <section class="acco">
-            <label for="accomplishment">What would you like to accomplish during this time?</label>
-            <input type="text" name="accomplishment" id="accomplishment">
-          </section>
+        <section class="acco">
+          <label for="accomplishment">What would you like to accomplish during this time?</label>
+          <input type="text" name="accomplishment" id="accomplishment" class="input-field">
+        </section>
+        <section class="time">
           <section class="min">
             <label for="minutes">Minutes</label>
-            <input type="number" name="minutes" id="minutes">
+            <input type="number" name="minutes" id="minutes" class="input-field">
           </section>
           <section class="sec">
             <label for="seconds">Seconds</label>
-            <input type="number" name="seconds" id="seconds">
+            <input type="number" name="seconds" id="seconds" class="input-field">
           </section>
-          <section class="start-button-container">
-            <input type="submit" value="START ACTIVITY" class="startB">
-          </section>
+        </section class="start-btn-container">
+          <input type="submit" value="START ACTIVITY" class="start-btn">
         </form>
     </section>
     <hr>
@@ -46,7 +44,7 @@
       </section>
     </section>
   </main>
-  <!-- <script src="src/activity.js"></script>
-  <script src="src/main.js"></script> -->
+  <script src="activity.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
