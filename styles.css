@@ -39,6 +39,8 @@ h2 {
   color: white;
   border-radius: 1%;
   box-shadow: 5px 5px 5px #202020;
+
+
 }
 
 .buttons {
@@ -59,6 +61,30 @@ h2 {
    justify-content: center;
    align-items: center;
 }
+
+/* NEW */
+.study-btn-active {
+  width: 8rem;
+  background: transparent;
+  border: 1.5px solid #B3FD78;
+  border-radius: 5%;
+  font-size: 14px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #B3FD78;
+}
+.meditate-btn-active {
+  color: #C278FD;
+  border-color: #B3FD78;
+}
+.exercise-btn-active {
+  color: #FD8078;
+  border-color: #B3FD78;
+}
+/* NEW end */
 
 .form-box img {
   height: 25px;
@@ -81,6 +107,7 @@ label {
   border-bottom: 1px solid #fff;
   width: 100%;
   margin-top: 1em;
+  color: white;
 }
 
 .time {
