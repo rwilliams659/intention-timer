@@ -3,6 +3,7 @@ var activityForm = document.querySelector('.form-box');
 var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 var activityData = [];
+var category;
 
 //Consider refactoring the below into 1 event listener by adding a common class to the minutes & seconds input fields
 minutesInput.addEventListener('keydown', formNumberValidation)
@@ -14,7 +15,7 @@ function clickHandler(event) {
     changeBtnColor(event);
   }
   if (event.target.classList.contains('start-btn')) {
-    createActivityInstance();
+    createActivityInstance(event);
   }
 }
 
@@ -34,17 +35,19 @@ function changeBtnColor(event) {
     var exerciseIcon = document.querySelector('.exercise-passive');
     exerciseIcon.src = 'assets/exercise-active.svg';
   }
+  category = event.target.value;
 }
 
-function createActivityInstance() {
+function createActivityInstance(event) {
   event.preventDefault();
   var userDescription = document.getElementById("accomplishment").value;
   var userMinutes = document.getElementById("minutes").value;
   var userSeconds = document.getElementById("seconds").value;
-  var activity = new Activity("study", userDescription, userMinutes, userSeconds);
+  var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
-
+  //call function to display the new view for timer
 }
+
 
 //For refactoring, have seconds only be able to go to 59 if have time
 function formNumberValidation(event) {
