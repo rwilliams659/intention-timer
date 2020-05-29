@@ -147,3 +147,15 @@ hr {
   padding-left: 1em;
   text-align: center;
 }
+
+.error {
+  color: #F0B8EC;
+  font-size: 16px;
+}
+
+.error img {
+  height: 16px;
+  width: 16px;
+}
+
+/* if we have time later lets resize the fonts of the form to be 400*/
