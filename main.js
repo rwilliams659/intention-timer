@@ -14,7 +14,6 @@ function clickHandler(event) {
     changeBtnColor(event);
   }
   if (event.target.classList.contains('start-btn')) {
-    console.log("hi");
     createActivityInstance();
   }
 }
