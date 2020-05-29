@@ -2,6 +2,9 @@
 var activityForm = document.querySelector('.form-box');
 var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
+var accomplishmentInput = document.getElementById('accomplishment');
+
+
 var activityData = [];
 var category;
 
@@ -15,15 +18,36 @@ function clickHandler(event) {
     changeBtnColor(event);
   }
   if (event.target.classList.contains('start-btn')) {
-    createActivityInstance(event);
+    // createActivityInstance(event);
+    validateForm();
   }
+
 }
+
+function validateForm() {
+  event.preventDefault();
+  //check if button is pressed
+    if (accomplishmentInput.value === "") {
+      alert("Description is required");
+    } else if (secondsInput.value === "") {
+      alert("Description is required");
+    } else if (minutesInput.value === "") {
+      alert("Description is required");
+    } else {
+      createActivityInstance();
+    }
+
+  }
+
+
+
 
 function changeBtnColor(event) {
   if (event.target.classList.contains('study-btn')) {
     event.target.classList.add('study-btn-active');
     var studyIcon = document.querySelector('.study-passive');
     studyIcon.src = 'assets/study-active.svg';
+
   }
   if (event.target.classList.contains('meditate-btn')) {
     event.target.classList.add('meditate-btn-active');
@@ -39,7 +63,6 @@ function changeBtnColor(event) {
 }
 
 function createActivityInstance(event) {
-  event.preventDefault();
   var userDescription = document.getElementById("accomplishment").value;
   var userMinutes = document.getElementById("minutes").value;
   var userSeconds = document.getElementById("seconds").value;
@@ -55,3 +78,11 @@ function formNumberValidation(event) {
     event.preventDefault();
   };
 }
+
+// work on making only one button accessable at a time
+// var meditateIcon = document.querySelector('.meditate-passive');
+// var exerciseIcon = document.querySelector('.exercise-passive');
+// document.querySelector('.exercise-btn').classList.remove('meditate-btn-active');
+// meditateIcon.src = "assets/meditate.svg";
+// document.querySelector('.meditate-btn').classList.remove('exercise-btn-active');
+// exerciseIcon.src = "assets/exercise.svg";
