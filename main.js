@@ -21,25 +21,35 @@ function clickHandler(event) {
     // createActivityInstance(event);
     validateForm();
   }
-
 }
+
+//should make seconds default equal to 0
 
 function validateForm() {
   event.preventDefault();
   //check if button is pressed
     if (accomplishmentInput.value === "") {
-      alert("Description is required");
+      accomplishmentInput.insertAdjacentHTML("afterend",`
+        <div class="error">
+          <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
+        </div>
+      `);
     } else if (secondsInput.value === "") {
-      alert("Description is required");
+      secondsInput.insertAdjacentHTML("afterend",`
+        <div class="error">
+          <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+        </div>
+      `);
     } else if (minutesInput.value === "") {
-      alert("Description is required");
+      minutesInput.insertAdjacentHTML("afterend",`
+        <div class="error">
+          <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+        </div>
+      `);
     } else {
       createActivityInstance();
     }
-
   }
-
-
 
 
 function changeBtnColor(event) {
