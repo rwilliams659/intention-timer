@@ -64,6 +64,21 @@ h2 {
    align-items: center;
 }
 
+.study-btn-active {
+  border: 1.5px solid #B3FD78;
+  color: #B3FD78;
+}
+
+.meditate-btn-active {
+  color: #C278FD;
+  border-color: #C278FD;
+}
+
+.exercise-btn-active {
+  color: #FD8078;
+  border-color: #FD8078;
+}
+
 .form-box img {
   height: 25px;
   width: 25px;
@@ -85,6 +100,7 @@ label {
   border-bottom: 1px solid #fff;
   width: 100%;
   margin-top: 1em;
+  color: white;
 }
 
 .time {
