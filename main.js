@@ -1,16 +1,23 @@
 
 var activityForm = document.querySelector('.form-box');
+var minutesInput = document.getElementById('minutes');
+var secondsInput = document.getElementById('seconds');
+var activityData = [];
 
-
+//Consider refactoring the below into 1 event listener by adding a common class to the minutes & seconds input fields
+minutesInput.addEventListener('keydown', formNumberValidation)
+secondsInput.addEventListener('keydown', formNumberValidation)
 activityForm.addEventListener('click', clickHandler);
-
 
 function clickHandler(event) {
   if (event.target.classList.contains('form-button')) {
     changeBtnColor(event);
   }
+  if (event.target.classList.contains('start-btn')) {
+    console.log("hi");
+    createActivityInstance();
+  }
 }
-
 
 function changeBtnColor(event) {
   if (event.target.classList.contains('study-btn')) {
@@ -29,13 +36,16 @@ function changeBtnColor(event) {
     exerciseIcon.src = 'assets/exercise-active.svg';
   }
 }
-var minutesInput = document.getElementById('minutes');
-var secondsInput = document.getElementById('seconds');
 
+function createActivityInstance() {
+  event.preventDefault();
+  var userDescription = document.getElementById("accomplishment").value;
+  var userMinutes = document.getElementById("minutes").value;
+  var userSeconds = document.getElementById("seconds").value;
+  var activity = new Activity("study", userDescription, userMinutes, userSeconds);
+  activityData.push(activity);
 
-//Consider refactoring the below into 1 event listener by adding a common class to the minutes & seconds input fields
-minutesInput.addEventListener('keydown', formNumberValidation)
-secondsInput.addEventListener('keydown', formNumberValidation)
+}
 
 //For refactoring, have seconds only be able to go to 59 if have time
 function formNumberValidation(event) {
