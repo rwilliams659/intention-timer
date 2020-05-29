@@ -28,7 +28,7 @@ function changeBtnColor(event) {
     var exerciseIcon = document.querySelector('.exercise-passive');
     exerciseIcon.src = 'assets/exercise-active.svg';
   }
-
+}
 var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 
