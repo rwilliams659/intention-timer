@@ -1,5 +1,5 @@
 
-var activityForm = document.querySelector('.form');
+var newActivitySection = document.querySelector('.new-activities-section');
 var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 var accomplishmentInput = document.getElementById('accomplishment');
@@ -11,7 +11,7 @@ var category;
 //Consider refactoring the below into 1 event listener by adding a common class to the minutes & seconds input fields
 minutesInput.addEventListener('keydown', formNumberValidation)
 secondsInput.addEventListener('keydown', formNumberValidation)
-activityForm.addEventListener('click', clickHandler);
+newActivitySection.addEventListener('click', clickHandler);
 
 function clickHandler(event) {
   if (event.target.classList.contains('form-button')) {
@@ -24,9 +24,46 @@ function clickHandler(event) {
 }
 
 //should make seconds default equal to 0
+function displayTimerInput() {
+  displayTimer();
+  replaceTimerInput();
+  changeOutlineColor();
+}
 
-function getTime() {
+function displayTimer() {
+  var newActivityHeading = document.querySelector('.new-activity');
+  var activityForm = document.querySelector('.form');
+  var currentActivityHeading = document.querySelector('.current-activity');
+  var timer = document.querySelector('.timer');
+  newActivityHeading.classList.add('hidden');
+  activityForm.classList.add('hidden');
+  currentActivityHeading.classList.remove('hidden');
+  timer.classList.remove('hidden');
+}
+function replaceTimerInput() {
+  var userInputActivity = document.querySelector('.user-input-activity');
+  var userInputTime = document.querySelector('.user-input-time');
+  if (secondsInput.value < 10) {
+    secondsInput.value = '0' + secondsInput.value
+  }
+  if (minutesInput.value < 10) {
+    minutesInput.value = '0' + minutesInput.value
+  }
+  userInputTime.innerText = `${minutesInput.value}:${secondsInput.value}`;
+  userInputActivity.innerText = accomplishmentInput.value;
+}
 
+function changeOutlineColor() {
+  var timerBtn = document.querySelector('.timer-button');
+  if (category === "study") {
+    timerBtn.classList.add('start-study-outline')
+  }
+  if (category === "meditate") {
+    timerBtn.classList.add('start-meditate-outline')
+  }
+  if (category === "exercise") {
+    timerBtn.classList.add('start-exercise-outline')
+  }
 }
 
 function validateForm() {
@@ -68,7 +105,6 @@ function changeBtnColor(event) {
     event.target.classList.add('study-btn-active');
     var studyIcon = document.querySelector('.study-passive');
     studyIcon.src = 'assets/study-active.svg';
-
   }
   if (event.target.classList.contains('meditate-btn')) {
     event.target.classList.add('meditate-btn-active');
@@ -87,8 +123,10 @@ function createActivityInstance(event) {
   var userDescription = document.getElementById("accomplishment").value;
   var userMinutes = document.getElementById("minutes").value;
   var userSeconds = document.getElementById("seconds").value;
+
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
+  displayTimerInput();
   //call function to display the new view for timer
 }
 

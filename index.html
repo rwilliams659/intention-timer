@@ -10,39 +10,42 @@
   </header>
   <main>
     <section class="new-activities-section">
-      <h2 class="new-activity hidden">New Activity</h2>
-      <h2 class="current-activity"> Current Activity</h2>
-<div class="form-box">
-  <section class="timer">
-    <button type="button" class="timer-button">START</button>
-  </section>
-      <form class="form hidden" action="index.html" method="post">
-        <label for="button-selectors">Select a category:</label>
-        <section class="buttons">
-          <button type="button" class="form-button study-btn" value="study"><img src="assets/study.svg" alt="light-bulb" class="study-passive">Study</button>
-          <button type="button" class="form-button meditate-btn" value="meditate"><img src="assets/meditate.svg" alt="crown" class="meditate-passive">Meditate</button>
-          <button type="button" class="form-button exercise-btn" value="exercise"><img src="assets/exercise.svg" alt="sneaker" class="exercise-passive">Exercise</button>
+      <h2 class="new-activity">New Activity</h2>
+      <h2 class="current-activity hidden"> Current Activity</h2>
+      <!-- possibly rename form-box to a better name -->
+      <div class="form-box">
+        <section class="timer hidden">
+          <h2 class="user-input-activity"></h2>
+          <p class="user-input-time"></p>
+          <button type="button" class="timer-button">START</button>
         </section>
-        <section class="acco">
-          <label for="accomplishment">What would you like to accomplish during this time?</label>
-          <input type="text" name="accomplishment" id="accomplishment" class="input-field">
-        </section>
-        <section class="time">
-          <section class="min">
-            <label for="minutes">Minutes</label>
-            <input type="number" name="minutes" id="minutes" class="input-field">
+        <form class="form" action="index.html" method="post">
+          <label for="button-selectors">Select a category:</label>
+          <section class="buttons">
+            <button type="button" class="form-button study-btn" value="study"><img src="assets/study.svg" alt="light-bulb" class="study-passive">Study</button>
+            <button type="button" class="form-button meditate-btn" value="meditate"><img src="assets/meditate.svg" alt="crown" class="meditate-passive">Meditate</button>
+            <button type="button" class="form-button exercise-btn" value="exercise"><img src="assets/exercise.svg" alt="sneaker" class="exercise-passive">Exercise</button>
           </section>
-          <section class="sec">
-            <label for="seconds">Seconds</label>
-            <input type="number" name="seconds" id="seconds" class="input-field">
+          <section class="acco">
+            <label for="accomplishment">What would you like to accomplish during this time?</label>
+            <input type="text" name="accomplishment" id="accomplishment" class="input-field">
           </section>
-        </section class="start-btn-container">
-          <input type="submit" value="START ACTIVITY" class="start-btn">
+          <section class="time">
+            <section class="min">
+              <label for="minutes">Minutes</label>
+              <input type="number" name="minutes" id="minutes" class="input-field">
+            </section>
+            <section class="sec">
+              <label for="seconds">Seconds</label>
+              <input type="number" name="seconds" id="seconds" class="input-field">
+            </section>
+          </section class="start-btn-container">
+            <input type="submit" value="START ACTIVITY" class="start-btn">
         </form>
       </div>
     </section>
     <hr>
-      <section class="saved-activities">
+    <section class="saved-activities">
       <h2>Past Activities</h2>
       <section class="default-words">
         <p>You haven't logged any activities yet.</p>
