@@ -3,8 +3,7 @@ var newActivitySection = document.querySelector('.new-activities-section');
 var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 var accomplishmentInput = document.getElementById('accomplishment');
-
-
+var startTimerBtn = document.querySelector(".timer-button");
 var activityData = [];
 var category;
 
@@ -20,6 +19,10 @@ function clickHandler(event) {
   if (event.target.classList.contains('start-btn')) {
     // createActivityInstance(event);
     validateForm();
+  }
+  if (event.target.classList.contains("timer-button")) {
+    var currentActivity = activityData[activityData.length - 1];
+    currentActivity.startTimer();
   }
 }
 
@@ -129,6 +132,8 @@ function createActivityInstance(event) {
   displayTimerInput();
   //call function to display the new view for timer
 }
+
+
 
 
 //For refactoring, have seconds only be able to go to 59 if have time
