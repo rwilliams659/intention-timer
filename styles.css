@@ -163,6 +163,7 @@ hr {
 
 .timer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -170,18 +171,40 @@ hr {
 .timer-button {
   font-size: 20px;
   color: white;
-  height: 300px;
-  width: 300px;
-  border: 1px solid white;
+  height: 200px;
+  width: 200px;
+  border: 2.5px solid white;
   border-radius: 100%;
   background: transparent;
+}
+
+.start-study-outline {
+  border-color: #B3FD78;
+}
+
+.start-meditate-outline {
+  border-color: #C278FD;
+}
+
+.start-exercise-outline {
+  border-color: #FD8078;
 }
 
 .hidden {
   display: none;
 }
 
+.user-input-time {
+  font-size: 75px;
+  font-weight: bolder;
+  padding-bottom: 35px;
+  margin: 0;
+}
 
+.user-input-activity {
+  margin: 0;
+  padding: 0;
+}
 
 
 
