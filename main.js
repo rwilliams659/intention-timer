@@ -1,5 +1,5 @@
 
-var activityForm = document.querySelector('.form-box');
+var activityForm = document.querySelector('.form');
 var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 var accomplishmentInput = document.getElementById('accomplishment');
@@ -25,9 +25,20 @@ function clickHandler(event) {
 
 //should make seconds default equal to 0
 
+function getTime() {
+
+}
+
 function validateForm() {
   event.preventDefault();
-  //check if button is pressed
+    if (category === undefined) {
+      var buttonSection = document.querySelector(".buttons");
+      buttonSection.insertAdjacentHTML("afterend",`
+        <div class="error">
+          <p><img src="assets/warning.svg" class="warning-image"/> A category is required.</p>
+        </div>
+      `);
+    }
     if (accomplishmentInput.value === "") {
       accomplishmentInput.insertAdjacentHTML("afterend",`
         <div class="error">
