@@ -10,8 +10,13 @@
   </header>
   <main>
     <section class="new-activities-section">
-      <h2>New Activity</h2>
-      <form class="form-box" action="index.html" method="post">
+      <h2 class="new-activity hidden">New Activity</h2>
+      <h2 class="current-activity"> Current Activity</h2>
+<div class="form-box">
+  <section class="timer">
+    <button type="button" class="timer-button">START</button>
+  </section>
+      <form class="form hidden" action="index.html" method="post">
         <label for="button-selectors">Select a category:</label>
         <section class="buttons">
           <button type="button" class="form-button study-btn" value="study"><img src="assets/study.svg" alt="light-bulb" class="study-passive">Study</button>
@@ -34,6 +39,7 @@
         </section class="start-btn-container">
           <input type="submit" value="START ACTIVITY" class="start-btn">
         </form>
+      </div>
     </section>
     <hr>
       <section class="saved-activities">

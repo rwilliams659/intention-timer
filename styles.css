@@ -158,4 +158,36 @@ hr {
   width: 16px;
 }
 
+.timerCircle {
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-button {
+  font-size: 20px;
+  color: white;
+  height: 300px;
+  width: 300px;
+  border: 1px solid white;
+  border-radius: 100%;
+  background: transparent;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
 /* if we have time later lets resize the fonts of the form to be 400*/
