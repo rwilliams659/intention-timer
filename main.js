@@ -71,7 +71,7 @@ function changeOutlineColor() {
     timerBtn.classList.add('start-exercise-outline')
   }
 }
-
+// fix the category warning message
 function validateForm() {
   event.preventDefault();
     if (category === undefined) {

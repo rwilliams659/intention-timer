@@ -13,7 +13,9 @@ class Activity {
   //Then it should call function to update display
 
 
+
   startTimer() {
+    var _this = this;
     var totalTime = (this.minutes * 60) + this.seconds;
     var intervalId = setInterval(function() {
       var timer = document.querySelector('.timer-display');
@@ -29,15 +31,15 @@ class Activity {
       timer.innerText = `${min}:${sec}`
       if (totalTime === 0) {
         clearInterval(intervalId);
-        alert('Time\'s up! Your activity is complete.')
+        _this.markComplete();
       }
     }, 1000);
   }
 
-
   markComplete() {
-
+    startTimerBtn.innerText = `COMPLETE!`;
   }
+
 
   saveToStorage() {
 
