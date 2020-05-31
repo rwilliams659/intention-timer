@@ -27,13 +27,13 @@ function clickHandler(event) {
 }
 
 //should make seconds default equal to 0
-function displayTimerInput() {
-  displayTimer();
-  replaceTimerInput();
+function displayTimerInput(activity) {
+  displayTimerView();
   changeOutlineColor();
+  displayTimeRemaining(activity);
 }
 
-function displayTimer() {
+function displayTimerView() {
   var newActivityHeading = document.querySelector('.new-activity');
   var activityForm = document.querySelector('.form');
   var currentActivityHeading = document.querySelector('.current-activity');
@@ -42,18 +42,6 @@ function displayTimer() {
   activityForm.classList.add('hidden');
   currentActivityHeading.classList.remove('hidden');
   timer.classList.remove('hidden');
-}
-function replaceTimerInput() {
-  var userInputActivity = document.querySelector('.user-input-activity');
-  var userInputTime = document.querySelector('.user-input-time');
-  if (secondsInput.value < 10) {
-    secondsInput.value = '0' + secondsInput.value
-  }
-  if (minutesInput.value < 10) {
-    minutesInput.value = '0' + minutesInput.value
-  }
-  userInputTime.innerText = `${minutesInput.value}:${secondsInput.value}`;
-  userInputActivity.innerText = accomplishmentInput.value;
 }
 
 function changeOutlineColor() {
@@ -67,6 +55,45 @@ function changeOutlineColor() {
   if (category === "exercise") {
     timerBtn.classList.add('start-exercise-outline')
   }
+}
+
+//  weird function
+// function replaceTimerInput() {
+//   var userInputActivity = document.querySelector('.user-input-activity');
+//   var userInputTime = document.querySelector('.user-input-time');
+//   if (secondsInput.value < 10) {
+//     secondsInput.value = '0' + secondsInput.value
+//   }
+//   if (minutesInput.value < 10) {
+//     minutesInput.value = '0' + minutesInput.value
+//   }
+//   userInputTime.innerText = `${minutesInput.value}:${secondsInput.value}`;
+//   userInputActivity.innerText = accomplishmentInput.value;
+// }
+
+function displayTimeRemaining(activity) {
+  setInterval(function() {
+    var timer = document.querySelector('.user-input-time');
+    var min = Math.floor(activity.timeRemaining/60);
+    if (min < 10) {
+      min = '0' + min
+    };
+    var sec = activity.timeRemaining%60;
+    if (sec < 10) {
+      sec = '0' + sec;
+    };
+    timer.innerText = `${min}:${sec}`
+  }, 1000)
+  // var userInputActivity = document.querySelector('.user-input-activity');
+  // var userInputTime = document.querySelector('.user-input-time');
+  // if (secondsInput.value < 10) {
+  //   secondsInput.value = '0' + secondsInput.value
+  // }
+  // if (minutesInput.value < 10) {
+  //   minutesInput.value = '0' + minutesInput.value
+  // }
+  // userInputTime.innerText = `${minutesInput.value}:${secondsInput.value}`;
+  // userInputActivity.innerText = accomplishmentInput.value;
 }
 
 function validateForm() {
@@ -129,7 +156,7 @@ function createActivityInstance(event) {
 
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
-  displayTimerInput();
+  displayTimerInput(activity);
   //call function to display the new view for timer
 }
 

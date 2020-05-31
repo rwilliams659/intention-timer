@@ -5,27 +5,34 @@ class Activity {
     this.minutes = minutes;
     this.seconds = seconds;
     this.completed = false;
-    this.totalTime = this.minutes*60 + this.seconds;
     this.id = Date.now();
+    //New
+    this.timeRemaining = this.minutes * 60 + this.seconds;
   }
 
+//MERGE INTO BELOW SETTIMER FUNCTION
+
+  //Class should maintain as class variable time remaining
+  //startTimer (setInterval) should only update the amount of time remaining
+  //Then it should call function to update display
+
+
   startTimer() {
-    setInterval(function updateTimer() {
-      var timer = document.querySelector('.timer');
-      console.log(timer)
-      var minutes = Math.floor(this.totalTime/60);
-      if (minutes < 10) {
-        minutes = '0' + minutes
-      };
-      console.log(minutes)
-      var seconds = this.totalTime%60;
-      if (seconds < 10) {
-        seconds = '0' + seconds;
-      };
-      console.log(seconds)
-      timer.innerText = `${minutes}:${seconds}`
-      this.totalTime --;
-      if (this.totalTime === 0) {
+    var totalTime = this.timeRemaining;
+    setInterval(function() {
+      // var timer = document.querySelector('.user-input-time');
+      // var min = Math.floor(totalTime/60);
+      // if (min < 10) {
+      //   min = '0' + min
+      // };
+      //
+      // var sec = totalTime%60;
+      // if (sec < 10) {
+      //   sec = '0' + sec;
+      // };
+      // timer.innerText = `${min}:${sec}`
+      totalTime --;
+      if (totalTime === 0) {
         clearInterval();
       }
     }, 1000);
