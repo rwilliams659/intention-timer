@@ -15,8 +15,8 @@ class Activity {
 
   startTimer() {
     var totalTime = (this.minutes * 60) + this.seconds;
-    setInterval(function() {
-      var timer = document.querySelector('.user-input-time');
+    var intervalId = setInterval(function() {
+      var timer = document.querySelector('.timer-display');
       totalTime --;
       var min = Math.floor(totalTime/60);
       if (min < 10) {
@@ -29,8 +29,8 @@ class Activity {
       console.log(totalTime);
       timer.innerText = `${min}:${sec}`
       if (totalTime === 0) {
+        clearInterval(intervalId);
         alert('Time\'s up! Your activity is complete.')
-        //clearInterval();
       }
     }, 1000);
   }

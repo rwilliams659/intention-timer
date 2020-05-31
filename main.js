@@ -29,7 +29,7 @@ function clickHandler(event) {
 //should make seconds default equal to 0
 function displayTimerInput(activity) {
   displayTimer();
-  replaceTimerInput(activity);
+  replaceTimerDisplay(activity);
   changeOutlineColor();
 }
 
@@ -44,9 +44,9 @@ function displayTimer() {
   timer.classList.remove('hidden');
 }
 
-function replaceTimerInput(activity) {
-  var userInputActivity = document.querySelector('.user-input-activity');
-  var userInputTime = document.querySelector('.user-input-time');
+function replaceTimerDisplay(activity) {
+  var descriptionDisplay = document.querySelector('.description-display');
+  var timerDisplay = document.querySelector('.timer-display');
   var secondsToDisplay = activity.seconds;
   var minutesToDisplay = activity.minutes;
   if (secondsToDisplay < 10) {
@@ -55,8 +55,8 @@ function replaceTimerInput(activity) {
   if (minutesToDisplay < 10) {
     minutesToDisplay = '0' + minutesToDisplay;
   }
-  userInputTime.innerText = `${minutesToDisplay}:${secondsToDisplay}`;
-  userInputActivity.innerText = activity.description;
+  timerDisplay.innerText = `${minutesToDisplay}:${secondsToDisplay}`;
+  descriptionDisplay.innerText = activity.description;
 }
 
 function changeOutlineColor() {
