@@ -5,7 +5,7 @@ var secondsInput = document.getElementById('seconds');
 var accomplishmentInput = document.getElementById('accomplishment');
 var startTimerBtn = document.querySelector(".timer-button");
 var activityData = [];
-var category;
+var category = '';
 
 //Consider refactoring the below into 1 event listener by adding a common class to the minutes & seconds input fields
 minutesInput.addEventListener('keydown', formNumberValidation)
@@ -31,6 +31,7 @@ function displayTimerInput(activity) {
   displayTimer();
   replaceTimerDisplay(activity);
   changeOutlineColor();
+  var category = '';
 }
 
 function displayTimer() {
@@ -74,34 +75,38 @@ function changeOutlineColor() {
 
 function validateForm() {
   event.preventDefault();
-    if (category === undefined) {
-      var buttonSection = document.querySelector(".buttons");
-      buttonSection.insertAdjacentHTML("afterend",`
-        <div class="error">
-          <p><img src="assets/warning.svg" class="warning-image"/> A category is required.</p>
-        </div>
-      `);
-    }
-    if (accomplishmentInput.value === "") {
-      accomplishmentInput.insertAdjacentHTML("afterend",`
-        <div class="error">
-          <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
-        </div>
-      `);
-    } else if (secondsInput.value === "") {
-      secondsInput.insertAdjacentHTML("afterend",`
-        <div class="error">
-          <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
-        </div>
-      `);
-    } else if (minutesInput.value === "") {
-      minutesInput.insertAdjacentHTML("afterend",`
-        <div class="error">
-          <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
-        </div>
-      `);
-    } else {
-      createActivityInstance();
+  if (category !== '' && accomplishmentInput.value !== "" && secondsInput.value !== "" && minutesInput.value !== "") {
+    createActivityInstance();
+  } else {
+      if (category === '') {
+        var buttonSection = document.querySelector(".buttons");
+        buttonSection.insertAdjacentHTML("afterend",`
+          <div class="error">
+            <p><img src="assets/warning.svg" class="warning-image"/> A category is required.</p>
+          </div>
+        `);
+      }
+      if (accomplishmentInput.value === "") {
+        accomplishmentInput.insertAdjacentHTML("afterend",`
+          <div class="error">
+            <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
+          </div>
+        `);
+      }
+      if (secondsInput.value === "") {
+        secondsInput.insertAdjacentHTML("afterend",`
+          <div class="error">
+            <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+          </div>
+        `);
+      }
+      if (minutesInput.value === "") {
+        minutesInput.insertAdjacentHTML("afterend",`
+          <div class="error">
+            <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+          </div>
+        `);
+      }
     }
   }
 
