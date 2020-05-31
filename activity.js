@@ -26,7 +26,6 @@ class Activity {
       if (sec < 10) {
         sec = '0' + sec;
       };
-      console.log(totalTime);
       timer.innerText = `${min}:${sec}`
       if (totalTime === 0) {
         clearInterval(intervalId);
