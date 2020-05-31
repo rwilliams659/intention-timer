@@ -28,12 +28,12 @@ function clickHandler(event) {
 
 //should make seconds default equal to 0
 function displayTimerInput(activity) {
-  displayTimerView();
+  displayTimer();
+  replaceTimerInput(activity);
   changeOutlineColor();
-  displayTimeRemaining(activity);
 }
 
-function displayTimerView() {
+function displayTimer() {
   var newActivityHeading = document.querySelector('.new-activity');
   var activityForm = document.querySelector('.form');
   var currentActivityHeading = document.querySelector('.current-activity');
@@ -42,6 +42,21 @@ function displayTimerView() {
   activityForm.classList.add('hidden');
   currentActivityHeading.classList.remove('hidden');
   timer.classList.remove('hidden');
+}
+
+function replaceTimerInput(activity) {
+  var userInputActivity = document.querySelector('.user-input-activity');
+  var userInputTime = document.querySelector('.user-input-time');
+  var secondsToDisplay = activity.seconds;
+  var minutesToDisplay = activity.minutes;
+  if (secondsToDisplay < 10) {
+    secondsToDisplay = '0' + secondsToDisplay;
+  }
+  if (minutesToDisplay < 10) {
+    minutesToDisplay = '0' + minutesToDisplay;
+  }
+  userInputTime.innerText = `${minutesToDisplay}:${secondsToDisplay}`;
+  userInputActivity.innerText = activity.description;
 }
 
 function changeOutlineColor() {
@@ -55,45 +70,6 @@ function changeOutlineColor() {
   if (category === "exercise") {
     timerBtn.classList.add('start-exercise-outline')
   }
-}
-
-//  weird function
-// function replaceTimerInput() {
-//   var userInputActivity = document.querySelector('.user-input-activity');
-//   var userInputTime = document.querySelector('.user-input-time');
-//   if (secondsInput.value < 10) {
-//     secondsInput.value = '0' + secondsInput.value
-//   }
-//   if (minutesInput.value < 10) {
-//     minutesInput.value = '0' + minutesInput.value
-//   }
-//   userInputTime.innerText = `${minutesInput.value}:${secondsInput.value}`;
-//   userInputActivity.innerText = accomplishmentInput.value;
-// }
-
-function displayTimeRemaining(activity) {
-  setInterval(function() {
-    var timer = document.querySelector('.user-input-time');
-    var min = Math.floor(activity.timeRemaining/60);
-    if (min < 10) {
-      min = '0' + min
-    };
-    var sec = activity.timeRemaining%60;
-    if (sec < 10) {
-      sec = '0' + sec;
-    };
-    timer.innerText = `${min}:${sec}`
-  }, 1000)
-  // var userInputActivity = document.querySelector('.user-input-activity');
-  // var userInputTime = document.querySelector('.user-input-time');
-  // if (secondsInput.value < 10) {
-  //   secondsInput.value = '0' + secondsInput.value
-  // }
-  // if (minutesInput.value < 10) {
-  //   minutesInput.value = '0' + minutesInput.value
-  // }
-  // userInputTime.innerText = `${minutesInput.value}:${secondsInput.value}`;
-  // userInputActivity.innerText = accomplishmentInput.value;
 }
 
 function validateForm() {
@@ -151,16 +127,14 @@ function changeBtnColor(event) {
 
 function createActivityInstance(event) {
   var userDescription = document.getElementById("accomplishment").value;
-  var userMinutes = document.getElementById("minutes").value;
-  var userSeconds = document.getElementById("seconds").value;
+  var userMinutes = parseInt(document.getElementById("minutes").value);
+  var userSeconds = parseInt(document.getElementById("seconds").value);
 
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
   displayTimerInput(activity);
   //call function to display the new view for timer
 }
-
-
 
 
 //For refactoring, have seconds only be able to go to 59 if have time
