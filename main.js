@@ -27,9 +27,9 @@ function clickHandler(event) {
 }
 
 //should make seconds default equal to 0
-function displayTimerInput() {
+function displayTimerInput(activity) {
   displayTimer();
-  replaceTimerInput();
+  replaceTimerDisplay(activity);
   changeOutlineColor();
 }
 
@@ -43,17 +43,20 @@ function displayTimer() {
   currentActivityHeading.classList.remove('hidden');
   timer.classList.remove('hidden');
 }
-function replaceTimerInput() {
-  var userInputActivity = document.querySelector('.user-input-activity');
-  var userInputTime = document.querySelector('.user-input-time');
-  if (secondsInput.value < 10) {
-    secondsInput.value = '0' + secondsInput.value
+
+function replaceTimerDisplay(activity) {
+  var descriptionDisplay = document.querySelector('.description-display');
+  var timerDisplay = document.querySelector('.timer-display');
+  var secondsToDisplay = activity.seconds;
+  var minutesToDisplay = activity.minutes;
+  if (secondsToDisplay < 10) {
+    secondsToDisplay = '0' + secondsToDisplay;
   }
-  if (minutesInput.value < 10) {
-    minutesInput.value = '0' + minutesInput.value
+  if (minutesToDisplay < 10) {
+    minutesToDisplay = '0' + minutesToDisplay;
   }
-  userInputTime.innerText = `${minutesInput.value}:${secondsInput.value}`;
-  userInputActivity.innerText = accomplishmentInput.value;
+  timerDisplay.innerText = `${minutesToDisplay}:${secondsToDisplay}`;
+  descriptionDisplay.innerText = activity.description;
 }
 
 function changeOutlineColor() {
@@ -124,16 +127,14 @@ function changeBtnColor(event) {
 
 function createActivityInstance(event) {
   var userDescription = document.getElementById("accomplishment").value;
-  var userMinutes = document.getElementById("minutes").value;
-  var userSeconds = document.getElementById("seconds").value;
+  var userMinutes = parseInt(document.getElementById("minutes").value);
+  var userSeconds = parseInt(document.getElementById("seconds").value);
 
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
-  displayTimerInput();
+  displayTimerInput(activity);
   //call function to display the new view for timer
 }
-
-
 
 
 //For refactoring, have seconds only be able to go to 59 if have time

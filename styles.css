@@ -194,14 +194,14 @@ hr {
   display: none;
 }
 
-.user-input-time {
+.timer-display {
   font-size: 75px;
   font-weight: bolder;
   padding-bottom: 35px;
   margin: 0;
 }
 
-.user-input-activity {
+.description-display {
   margin: 0;
   padding: 0;
 }
