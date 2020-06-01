@@ -228,16 +228,25 @@ hr {
 .selected-activity {
   margin-top: 10px;
 }
-.border-line {
-  border-right: 3px solid white;
+
+.border-line-study {
+  border-right: 3px solid #B3FD78;;
   height: 30px;
   margin: 10px;
 }
 
+.border-line-meditate {
+border-right: 3px solid #C278FD;
+height: 30px;
+margin: 10px;
+}
 
+.border-line-exercise {
+  border-right: 3px solid #FD8078;;
+  height: 30px;
+  margin: 10px;
 
-
-
+}
 
 
 /* if we have time later lets resize the fonts of the form to be 400*/
