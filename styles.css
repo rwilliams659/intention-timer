@@ -206,6 +206,33 @@ hr {
   padding: 0;
 }
 
+.card-type {
+  display: flex;
+  justify-content: space-between;
+  color: #FFF;
+  background-color: #46424D;
+  border-radius: 5% 5%;
+  margin: 15px;
+}
+.card {
+  display: flex;
+  flex: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  font-size: 14;
+}
+.selected-type {
+  font-weight: bolder;
+}
+.selected-activity {
+  margin-top: 10px;
+}
+.border-line {
+  border-right: 3px solid white;
+  height: 30px;
+  margin: 10px;
+}
 
 
 
