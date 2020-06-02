@@ -214,6 +214,7 @@ hr {
   border-radius: 5% 5%;
   margin: 15px;
 }
+
 .card {
   display: flex;
   flex: wrap;
@@ -225,6 +226,7 @@ hr {
 .selected-type {
   font-weight: bolder;
 }
+
 .selected-activity {
   margin-top: 10px;
 }
