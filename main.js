@@ -93,7 +93,7 @@ function validateForm() {
           </div>
         `);
       }
-      if (accomplishmentInput.value === "" &&) {
+      if (accomplishmentInput.value === "") {
         accomplishmentInput.insertAdjacentHTML("afterend",`
           <div class="error">
             <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
@@ -137,14 +137,12 @@ function createActivityInstance(event) {
   var userDescription = document.getElementById("accomplishment").value;
   var userMinutes = parseInt(document.getElementById("minutes").value);
   var userSeconds = parseInt(document.getElementById("seconds").value);
-
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
   displayTimerInput(activity);
   //call function to display the new view for timer
 }
 
-//For refactoring, have seconds only be able to go to 59 if have time
 function formNumberValidation(event) {
   if (event.key === "e" || event.key === "+" || event.key === "." || event.key === "-") {
     event.preventDefault();
