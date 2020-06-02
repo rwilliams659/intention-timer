@@ -82,7 +82,7 @@ function changeOutlineColor() {
 // fix the category warning message
 function validateForm() {
   event.preventDefault();
-  if (category !== '' && accomplishmentInput.value !== "" && secondsInput.value !== "" && minutesInput.value !== "") {
+  if (category !== '' && accomplishmentInput.value !== "" && minutesInput.value !== "" && secondsInput.value !== "" && secondsInput.value < 60) {
     createActivityInstance();
   } else {
       if (category === '') {
@@ -93,17 +93,17 @@ function validateForm() {
           </div>
         `);
       }
-      if (accomplishmentInput.value === "") {
+      if (accomplishmentInput.value === "" &&) {
         accomplishmentInput.insertAdjacentHTML("afterend",`
           <div class="error">
             <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
           </div>
         `);
       }
-      if (secondsInput.value === "") {
+      if (secondsInput.value === "" || secondsInput.value >= 60) {
         secondsInput.insertAdjacentHTML("afterend",`
           <div class="error">
-            <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+            <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
           </div>
         `);
       }
