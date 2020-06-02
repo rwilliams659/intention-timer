@@ -9,6 +9,7 @@ var newActivityHeading = document.querySelector('.new-activity');
 var activityForm = document.querySelector('.form');
 var currentActivityHeading = document.querySelector('.current-activity');
 var createNewActivBtn = document.querySelector(".create-new-activity");
+var logBtn = document.querySelector(".log-btn");
 var activityData = [];
 var category = '';
 
@@ -81,6 +82,8 @@ function changeOutlineColor() {
 function validateForm() {
   event.preventDefault();
   startTimerBtn.innerText = "START ACTIVITY";
+  changeOutlineColor();
+  logBtn.classList.add("hidden");
   var categoryError = document.querySelector(".category-error");
   var accomplishmentError = document.querySelector(".accomplishment-error");
   var minutesError = document.querySelector(".minutes-error");

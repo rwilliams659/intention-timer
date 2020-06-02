@@ -37,7 +37,7 @@ class Activity {
   }
 
   markComplete() {
-    var logBtn = document.querySelector(".log-btn");
+    
     var finishMessages = ['COMPLETE!', 'YOU DID IT!', 'NICE JOB!'];
     var randomMessage = finishMessages[Math.floor(Math.random() * finishMessages.length)];
     startTimerBtn.innerText = `${randomMessage}`;
