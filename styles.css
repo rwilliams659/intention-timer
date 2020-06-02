@@ -169,9 +169,6 @@ hr {
   width: 16px;
 }
 
-.timerCircle {
-}
-
 .timer {
   display: flex;
   flex-direction: column;

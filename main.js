@@ -82,29 +82,33 @@ function changeOutlineColor() {
 // refactor function below so that only 1 error message for each field can show at a time
 function validateForm() {
   event.preventDefault();
+  var categoryError = document.querySelector(".category-error");
+  var accomplishmentError = document.querySelector(".accomplishment-error");
+  var minutesError = document.querySelector(".minutes-error");
+  var secondsError = document.querySelector(".seconds-error");
+  categoryError.innerHTML = '';
+  accomplishmentError.innerHTML = '';
+  minutesError.innerHTML = '';
+  secondsError.innerHTML = '';
   if (category !== '' && accomplishmentInput.value !== "" && minutesInput.value !== "" && secondsInput.value !== "" && secondsInput.value < 60) {
     createActivityInstance();
   } else {
       if (category === '') {
-        var categoryError = document.querySelector(".category-error");
         categoryError.innerHTML = `
             <p><img src="assets/warning.svg" class="warning-image"/> A category is required.</p>
         `;
       }
       if (accomplishmentInput.value === "") {
-        var accomplishmentError = document.querySelector(".accomplishment-error");
         accomplishmentError.innerHTML = `
             <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
         `;
       }
       if (minutesInput.value === "") {
-        var minutesError = document.querySelector(".minutes-error");
         minutesError.innerHTML = `
           <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
         `;
       }
       if (secondsInput.value === "" || secondsInput.value >= 60) {
-        var secondsError = document.querySelector(".seconds-error");
         secondsError.innerHTML = `
           <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
         `;
@@ -156,7 +160,6 @@ function changeBtnColor(event) {
   categoryArray = ["study", "meditate", "exercise"];
   for (var i = 0; i < categoryArray.length; i++) {
     var currentButton = document.querySelector(`.${categoryArray[i]}-btn`);
-    console.log(currentButton);
     var currentIcon = document.querySelector(`.${categoryArray[i]}-passive`);
     currentButton.classList.remove(`${categoryArray[i]}-btn-active`)
     currentIcon.src = `assets/${categoryArray[i]}.svg`
