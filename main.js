@@ -118,22 +118,19 @@ function validateForm() {
   }
 
 function changeBtnColor(event) {
-  if (event.target.classList.contains('study-btn')) {
-    event.target.classList.add('study-btn-active');
-    var studyIcon = document.querySelector('.study-passive');
-    studyIcon.src = 'assets/study-active.svg';
+  categoryArray = ["study", "meditate", "exercise"];
+  for (var i = 0; i < categoryArray.length; i++) {
+    var currentButton = document.querySelector(`.${categoryArray[i]}-btn`);
+    console.log(currentButton);
+    var currentIcon = document.querySelector(`.${categoryArray[i]}-passive`);
+    currentButton.classList.remove(`${categoryArray[i]}-btn-active`)
+    currentIcon.src = `assets/${categoryArray[i]}.svg`
+    if (event.target.classList.contains(`${categoryArray[i]}-btn`)) {
+      event.target.classList.add(`${categoryArray[i]}-btn-active`);
+      currentIcon.src = `assets/${categoryArray[i]}-active.svg`;
+    }
+    category = event.target.value;
   }
-  if (event.target.classList.contains('meditate-btn')) {
-    event.target.classList.add('meditate-btn-active');
-    var meditateIcon = document.querySelector('.meditate-passive');
-    meditateIcon.src = 'assets/meditate-active.svg';
-  }
-  if (event.target.classList.contains('exercise-btn')) {
-    event.target.classList.add('exercise-btn-active');
-    var exerciseIcon = document.querySelector('.exercise-passive');
-    exerciseIcon.src = 'assets/exercise-active.svg';
-  }
-  category = event.target.value;
 }
 
 function createActivityInstance(event) {
