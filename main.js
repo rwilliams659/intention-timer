@@ -22,7 +22,6 @@ function clickHandler(event) {
     changeBtnColor(event);
   }
   if (event.target.classList.contains('start-btn')) {
-    // createActivityInstance(event);
     validateForm();
   }
   if (event.target.classList.contains("timer-button")) {
@@ -37,7 +36,6 @@ function clickHandler(event) {
   }
 }
 
-//should make seconds default equal to 0
 function displayTimerInput(activity) {
   displayTimer();
   replaceTimerDisplay(activity);
@@ -79,40 +77,39 @@ function changeOutlineColor() {
     timerBtn.classList.add('start-exercise-outline')
   }
 }
-// fix the category warning message
+
 function validateForm() {
   event.preventDefault();
+  var categoryError = document.querySelector(".category-error");
+  var accomplishmentError = document.querySelector(".accomplishment-error");
+  var minutesError = document.querySelector(".minutes-error");
+  var secondsError = document.querySelector(".seconds-error");
+  categoryError.innerHTML = '';
+  accomplishmentError.innerHTML = '';
+  minutesError.innerHTML = '';
+  secondsError.innerHTML = '';
   if (category !== '' && accomplishmentInput.value !== "" && minutesInput.value !== "" && secondsInput.value !== "" && secondsInput.value < 60) {
     createActivityInstance();
   } else {
       if (category === '') {
-        var buttonSection = document.querySelector(".buttons");
-        buttonSection.insertAdjacentHTML("afterend",`
-          <div class="error">
+        categoryError.innerHTML = `
             <p><img src="assets/warning.svg" class="warning-image"/> A category is required.</p>
-          </div>
-        `);
+        `;
       }
       if (accomplishmentInput.value === "") {
-        accomplishmentInput.insertAdjacentHTML("afterend",`
-          <div class="error">
+        accomplishmentError.innerHTML = `
             <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
-          </div>
-        `);
-      }
-      if (secondsInput.value === "" || secondsInput.value >= 60) {
-        secondsInput.insertAdjacentHTML("afterend",`
-          <div class="error">
-            <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
-          </div>
-        `);
+        `;
       }
       if (minutesInput.value === "") {
-        minutesInput.insertAdjacentHTML("afterend",`
-          <div class="error">
-            <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
-          </div>
-        `);
+        minutesError.innerHTML = `
+          <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+        `;
+      }
+      if (secondsInput.value === "" || secondsInput.value >= 60) {
+        secondsError.innerHTML = `
+          <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
+        `;
       }
     }
   }
@@ -121,7 +118,6 @@ function changeBtnColor(event) {
   categoryArray = ["study", "meditate", "exercise"];
   for (var i = 0; i < categoryArray.length; i++) {
     var currentButton = document.querySelector(`.${categoryArray[i]}-btn`);
-    console.log(currentButton);
     var currentIcon = document.querySelector(`.${categoryArray[i]}-passive`);
     currentButton.classList.remove(`${categoryArray[i]}-btn-active`)
     currentIcon.src = `assets/${categoryArray[i]}.svg`
@@ -140,7 +136,6 @@ function createActivityInstance(event) {
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
   displayTimerInput(activity);
-  //call function to display the new view for timer
 }
 
 function formNumberValidation(event) {
@@ -185,11 +180,3 @@ function formNumberValidation(event) {
     event.preventDefault();
   };
 }
-
-// work on making only one button accessable at a time
-// var meditateIcon = document.querySelector('.meditate-passive');
-// var exerciseIcon = document.querySelector('.exercise-passive');
-// document.querySelector('.exercise-btn').classList.remove('meditate-btn-active');
-// meditateIcon.src = "assets/meditate.svg";
-// document.querySelector('.meditate-btn').classList.remove('exercise-btn-active');
-// exerciseIcon.src = "assets/exercise.svg";
