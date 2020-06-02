@@ -80,6 +80,7 @@ function changeOutlineColor() {
 
 function validateForm() {
   event.preventDefault();
+  startTimerBtn.innerText = "START ACTIVITY";
   var categoryError = document.querySelector(".category-error");
   var accomplishmentError = document.querySelector(".accomplishment-error");
   var minutesError = document.querySelector(".minutes-error");
