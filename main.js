@@ -82,7 +82,7 @@ function changeOutlineColor() {
 // fix the category warning message
 function validateForm() {
   event.preventDefault();
-  if (category !== '' && accomplishmentInput.value !== "" && secondsInput.value !== "" && minutesInput.value !== "") {
+  if (category !== '' && accomplishmentInput.value !== "" && minutesInput.value !== "" && secondsInput.value !== "" && secondsInput.value < 60) {
     createActivityInstance();
   } else {
       if (category === '') {
@@ -100,10 +100,10 @@ function validateForm() {
           </div>
         `);
       }
-      if (secondsInput.value === "") {
+      if (secondsInput.value === "" || secondsInput.value >= 60) {
         secondsInput.insertAdjacentHTML("afterend",`
           <div class="error">
-            <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+            <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
           </div>
         `);
       }
@@ -117,39 +117,32 @@ function validateForm() {
     }
   }
 
-
 function changeBtnColor(event) {
-  if (event.target.classList.contains('study-btn')) {
-    event.target.classList.add('study-btn-active');
-    var studyIcon = document.querySelector('.study-passive');
-    studyIcon.src = 'assets/study-active.svg';
+  categoryArray = ["study", "meditate", "exercise"];
+  for (var i = 0; i < categoryArray.length; i++) {
+    var currentButton = document.querySelector(`.${categoryArray[i]}-btn`);
+    console.log(currentButton);
+    var currentIcon = document.querySelector(`.${categoryArray[i]}-passive`);
+    currentButton.classList.remove(`${categoryArray[i]}-btn-active`)
+    currentIcon.src = `assets/${categoryArray[i]}.svg`
+    if (event.target.classList.contains(`${categoryArray[i]}-btn`)) {
+      event.target.classList.add(`${categoryArray[i]}-btn-active`);
+      currentIcon.src = `assets/${categoryArray[i]}-active.svg`;
+    }
+    category = event.target.value;
   }
-  if (event.target.classList.contains('meditate-btn')) {
-    event.target.classList.add('meditate-btn-active');
-    var meditateIcon = document.querySelector('.meditate-passive');
-    meditateIcon.src = 'assets/meditate-active.svg';
-  }
-  if (event.target.classList.contains('exercise-btn')) {
-    event.target.classList.add('exercise-btn-active');
-    var exerciseIcon = document.querySelector('.exercise-passive');
-    exerciseIcon.src = 'assets/exercise-active.svg';
-  }
-  category = event.target.value;
 }
 
 function createActivityInstance(event) {
   var userDescription = document.getElementById("accomplishment").value;
   var userMinutes = parseInt(document.getElementById("minutes").value);
   var userSeconds = parseInt(document.getElementById("seconds").value);
-
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
   displayTimerInput(activity);
   //call function to display the new view for timer
 }
 
-
-//For refactoring, have seconds only be able to go to 59 if have time
 function formNumberValidation(event) {
   if (event.key === "e" || event.key === "+" || event.key === "." || event.key === "-") {
     event.preventDefault();
@@ -184,8 +177,15 @@ function returnToForm() {
   currentActivityHeading.classList.add('hidden');
   timer.classList.add('hidden');
   createNewActivBtn.classList.add("hidden");
-
 }
+
+function formNumberValidation(event) {
+  var charactersToExclude = ['e', 'E', '+', '.', '-']
+  if (charactersToExclude.includes(event.key)) {
+    event.preventDefault();
+  };
+}
+
 // work on making only one button accessable at a time
 // var meditateIcon = document.querySelector('.meditate-passive');
 // var exerciseIcon = document.querySelector('.exercise-passive');
