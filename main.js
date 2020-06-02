@@ -117,7 +117,6 @@ function validateForm() {
     }
   }
 
-
 function changeBtnColor(event) {
   if (event.target.classList.contains('study-btn')) {
     event.target.classList.add('study-btn-active');
@@ -147,7 +146,6 @@ function createActivityInstance(event) {
   displayTimerInput(activity);
   //call function to display the new view for timer
 }
-
 
 //For refactoring, have seconds only be able to go to 59 if have time
 function formNumberValidation(event) {
@@ -184,8 +182,15 @@ function returnToForm() {
   currentActivityHeading.classList.add('hidden');
   timer.classList.add('hidden');
   createNewActivBtn.classList.add("hidden");
-
 }
+
+function formNumberValidation(event) {
+  var charactersToExclude = ['e', 'E', '+', '.', '-']
+  if (charactersToExclude.includes(event.key)) {
+    event.preventDefault();
+  };
+}
+
 // work on making only one button accessable at a time
 // var meditateIcon = document.querySelector('.meditate-passive');
 // var exerciseIcon = document.querySelector('.exercise-passive');
