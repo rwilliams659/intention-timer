@@ -149,6 +149,25 @@ function formNumberValidation(event) {
   };
 }
 
+function logActivity() {
+  var defaultWords = document.querySelector(".default-words");
+  var loggedActivitiesSection = document.querySelector(".logged-activities");
+  defaultWords.classList.add("hidden");
+  // loggedActivitiesSection.innerText = "";
+  for (var i = 0; i < activityData.length; i++) {
+  var newLoggedActivity = `
+  <section class="card-type">
+      <section class="card">
+        <section class="selected-type">${activityData[i].category}</section>
+        <section class="selected-time">${activityData[i].minutes} MINUTES ${activityData[i].seconds} SECONDS</section>
+        <section class="selected-activity">${activityData[i].description}</section>
+      </section>
+      <p class="border-line"></p>
+    </section>
+  `;
+  loggedActivitiesSection.insertAdjacentHTML("afterbegin", newLoggedActivity);
+  }
+}
 // work on making only one button accessable at a time
 // var meditateIcon = document.querySelector('.meditate-passive');
 // var exerciseIcon = document.querySelector('.exercise-passive');

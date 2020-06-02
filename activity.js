@@ -38,6 +38,7 @@ class Activity {
 
   markComplete() {
     startTimerBtn.innerText = `COMPLETE!`;
+  
   }
 
   saveToStorage() {
