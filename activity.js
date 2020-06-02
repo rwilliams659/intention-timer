@@ -13,6 +13,7 @@ class Activity {
   //Then it should call function to update display
 
 
+
   startTimer() {
     var _this = this;
     var totalTime = (this.minutes * 60) + this.seconds;
@@ -35,10 +36,10 @@ class Activity {
     }, 1000);
   }
 
-
   markComplete() {
     startTimerBtn.innerText = `COMPLETE!`;
   }
+
 
   saveToStorage() {
 
