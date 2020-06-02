@@ -148,6 +148,7 @@ function formNumberValidation(event) {
 function logActivity() {
   var defaultWords = document.querySelector(".default-words");
   var loggedActivitiesSection = document.querySelector(".logged-activities");
+  loggedActivitiesSection.innerHTML = "";
   defaultWords.classList.add("hidden");
   for (var i = 0; i < activityData.length; i++) {
     if (activityData[i].category === "study") {}
