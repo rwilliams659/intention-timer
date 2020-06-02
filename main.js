@@ -79,43 +79,78 @@ function changeOutlineColor() {
     timerBtn.classList.add('start-exercise-outline')
   }
 }
-// fix the category warning message
+// refactor function below so that only 1 error message for each field can show at a time
 function validateForm() {
   event.preventDefault();
   if (category !== '' && accomplishmentInput.value !== "" && minutesInput.value !== "" && secondsInput.value !== "" && secondsInput.value < 60) {
     createActivityInstance();
   } else {
       if (category === '') {
-        var buttonSection = document.querySelector(".buttons");
-        buttonSection.insertAdjacentHTML("afterend",`
-          <div class="error">
+        var categoryError = document.querySelector(".category-error");
+        categoryError.innerHTML = `
             <p><img src="assets/warning.svg" class="warning-image"/> A category is required.</p>
-          </div>
-        `);
+        `;
       }
       if (accomplishmentInput.value === "") {
-        accomplishmentInput.insertAdjacentHTML("afterend",`
-          <div class="error">
+        var accomplishmentError = document.querySelector(".accomplishment-error");
+        accomplishmentError.innerHTML = `
             <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
-          </div>
-        `);
-      }
-      if (secondsInput.value === "" || secondsInput.value >= 60) {
-        secondsInput.insertAdjacentHTML("afterend",`
-          <div class="error">
-            <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
-          </div>
-        `);
+        `;
       }
       if (minutesInput.value === "") {
-        minutesInput.insertAdjacentHTML("afterend",`
-          <div class="error">
-            <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
-          </div>
-        `);
+        var minutesError = document.querySelector(".minutes-error");
+        minutesError.innerHTML = `
+          <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+        `;
+      }
+      if (secondsInput.value === "" || secondsInput.value >= 60) {
+        var secondsError = document.querySelector(".seconds-error");
+        secondsError.innerHTML = `
+          <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
+        `;
       }
     }
   }
+
+
+
+//OLD VERSION
+// function validateForm() {
+//   event.preventDefault();
+//   if (category !== '' && accomplishmentInput.value !== "" && minutesInput.value !== "" && secondsInput.value !== "" && secondsInput.value < 60) {
+//     createActivityInstance();
+//   } else {
+//       if (category === '') {
+//         var buttonSection = document.querySelector(".buttons");
+//         buttonSection.insertAdjacentHTML("afterend",`
+//           <div class="error">
+//             <p><img src="assets/warning.svg" class="warning-image"/> A category is required.</p>
+//           </div>
+//         `);
+//       }
+//       if (accomplishmentInput.value === "") {
+//         accomplishmentInput.insertAdjacentHTML("afterend",`
+//           <div class="error">
+//             <p><img src="assets/warning.svg" class="warning-image"/> A description is required.</p>
+//           </div>
+//         `);
+//       }
+//       if (secondsInput.value === "" || secondsInput.value >= 60) {
+//         secondsInput.insertAdjacentHTML("afterend",`
+//           <div class="error">
+//             <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
+//           </div>
+//         `);
+//       }
+//       if (minutesInput.value === "") {
+//         minutesInput.insertAdjacentHTML("afterend",`
+//           <div class="error">
+//             <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+//           </div>
+//         `);
+//       }
+//     }
+//   }
 
 function changeBtnColor(event) {
   categoryArray = ["study", "meditate", "exercise"];
