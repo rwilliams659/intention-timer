@@ -4,6 +4,7 @@ var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 var accomplishmentInput = document.getElementById('accomplishment');
 var startTimerBtn = document.querySelector(".timer-button");
+//maybe add globaly
 var activityData = [];
 var category = '';
 
@@ -138,7 +139,6 @@ function createActivityInstance(event) {
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
   displayTimerInput(activity);
-  logActivity()
   //call function to display the new view for timer
 }
 

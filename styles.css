@@ -131,6 +131,16 @@ label {
   float: right;
 }
 
+.log-btn {
+  -webkit-appearance: none;
+  height: 35px;
+  width: 30%;
+  border-radius: 5%;
+  font-size: 14px;
+  float: center;
+  margin-top: 25px;
+}
+
 hr {
   border: 1px solid #46424D;
   margin-top: 0;
@@ -247,8 +257,9 @@ margin: 10px;
   border-right: 3px solid #FD8078;;
   height: 30px;
   margin: 10px;
-
 }
+
+
 
 
 /* if we have time later lets resize the fonts of the form to be 400*/
