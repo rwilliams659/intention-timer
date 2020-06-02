@@ -4,7 +4,6 @@ var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 var accomplishmentInput = document.getElementById('accomplishment');
 var startTimerBtn = document.querySelector(".timer-button");
-//maybe add globaly
 var activityData = [];
 var category = '';
 
@@ -24,6 +23,9 @@ function clickHandler(event) {
   if (event.target.classList.contains("timer-button")) {
     var currentActivity = activityData[activityData.length - 1];
     currentActivity.startTimer();
+  }
+  if (event.target.classList.contains("log-btn")) {
+    logActivity();
   }
 }
 
@@ -155,6 +157,7 @@ function logActivity() {
   var loggedActivitiesSection = document.querySelector(".logged-activities");
   defaultWords.classList.add("hidden");
   for (var i = 0; i < activityData.length; i++) {
+    // if (activityData[i].category === "study") {}
   var newLoggedActivity = `
   <section class="card-type">
       <section class="card">
@@ -162,7 +165,7 @@ function logActivity() {
         <section class="selected-time">${activityData[i].minutes} MINUTES ${activityData[i].seconds} SECONDS</section>
         <section class="selected-activity">${activityData[i].description}</section>
       </section>
-      <p class="border-line"></p>
+      <p class="border-line-${activityData[i].category}"></p>
     </section>
   `;
   loggedActivitiesSection.insertAdjacentHTML("afterbegin", newLoggedActivity);
