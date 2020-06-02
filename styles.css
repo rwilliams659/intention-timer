@@ -40,6 +40,7 @@ h2 {
   margin: 20px;
   padding: 3rem 5rem 5rem 5rem;
   width: 77%;
+  height: 55%;
   color: white;
   border-radius: 1%;
   box-shadow: 5px 5px 5px #202020;
@@ -131,6 +132,16 @@ label {
   float: right;
 }
 
+.log-btn {
+  -webkit-appearance: none;
+  height: 35px;
+  width: 30%;
+  border-radius: 5%;
+  font-size: 14px;
+  float: center;
+  margin-top: 25px;
+}
+
 hr {
   border: 1px solid #46424D;
   margin-top: 0;
@@ -206,16 +217,16 @@ hr {
   padding: 0;
 }
 
-/* .card-type {
+.card-type {
   display: flex;
   justify-content: space-between;
   color: #FFF;
   background-color: #46424D;
   border-radius: 5% 5%;
   margin: 15px;
-} */
+}
 
-/* .card {
+.card {
   display: flex;
   flex: wrap;
   flex-direction: column;
@@ -223,7 +234,6 @@ hr {
   margin: 10px;
   font-size: 14;
 }
-
 .selected-type {
   font-weight: bolder;
 }
@@ -232,16 +242,36 @@ hr {
   margin-top: 10px;
 }
 
-.border-line {
-  border-right: 3px solid white;
+.border-line-study {
+  border-right: 3px solid #B3FD78;;
   height: 30px;
   margin: 10px;
-} */
+}
 
+.border-line-meditate {
+border-right: 3px solid #C278FD;
+height: 30px;
+margin: 10px;
+}
 
+.border-line-exercise {
+  border-right: 3px solid #FD8078;;
+  height: 30px;
+  margin: 10px;
+}
 
+.create-new-activity {
+  -webkit-appearance: none;
+  height: 35px;
+  width: 40%;
+  border-radius: 5%;
+  font-size: 14px;
+  margin-top: 35px;
+}
 
-
-
+.new-act-sec {
+  display: flex;
+  justify-content: center;
+}
 
 /* if we have time later lets resize the fonts of the form to be 400*/

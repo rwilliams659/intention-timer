@@ -2,66 +2,66 @@
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <h1>INTENTION TIMER
-    </h1>
-  </header>
-  <main>
-    <section class="new-activities-section">
-      <h2 class="new-activity">New Activity</h2>
-      <h2 class="current-activity hidden"> Current Activity</h2>
-      <!-- possibly rename form-box to a better name -->
-      <div class="form-box">
-        <section class="timer hidden">
-          <h2 class="description-display"></h2>
-          <p class="timer-display"></p>
-          <button type="button" class="timer-button">START</button>
+  </head>
+  <body>
+    <header>
+      <h1>INTENTION TIMER
+      </h1>
+    </header>
+    <main>
+      <section class="new-activities-section">
+        <h2 class="new-activity">New Activity</h2>
+        <h2 class="current-activity hidden"> Current Activity</h2>
+        <!-- possibly rename form-box to a better name -->
+        <div class="form-box">
+          <section class="new-act-sec">
+            <input class="create-new-activity hidden" type="button" value="CREATE A NEW ACTIVITY"></input>
+          </section>
+          <section class="timer hidden">
+            <h2 class="description-display"></h2>
+            <p class="timer-display"></p>
+            <button type="button" class="timer-button">START</button>
+            <input type="submit" value="LOG ACTIVITY" class="log-btn hidden">
+          </section>
+          <form class="form" action="index.html" method="post">
+            <label for="button-selectors">Select a category:</label>
+            <section class="buttons">
+              <button type="button" class="form-button study-btn" value="study"><img src="assets/study.svg" alt="light-bulb" class="study-passive">Study</button>
+              <button type="button" class="form-button meditate-btn" value="meditate"><img src="assets/meditate.svg" alt="crown" class="meditate-passive">Meditate</button>
+              <button type="button" class="form-button exercise-btn" value="exercise"><img src="assets/exercise.svg" alt="sneaker" class="exercise-passive">Exercise</button>
+            </section>
+            <section class="acco">
+              <label for="accomplishment">What would you like to accomplish during this time?</label>
+              <input type="text" name="accomplishment" id="accomplishment" class="input-field">
+            </section>
+            <section class="time">
+              <section class="min">
+                <label for="minutes">Minutes</label>
+                <input type="number" name="minutes" id="minutes" class="input-field">
+              </section>
+              <section class="sec">
+                <label for="seconds">Seconds</label>
+                <input type="number" name="seconds" id="seconds" class="input-field">
+              </section>
+            </section class="start-btn-container">
+              <input type="submit" value="START ACTIVITY" class="start-btn">
+              <!-- move to right spot -->
+          </form>
+        </div>
+      </section>
+      <hr>
+      <section class="saved-activities">
+        <h2>Past Activities</h2>
+        <section class="logged-activities"></section>
+        <section class="default-words">
+          <p>You haven't logged any activities yet.</p>
+          <p>Complete the form to the left to get started!</p>
         </section>
-        <form class="form" action="index.html" method="post">
-          <label for="button-selectors">Select a category:</label>
-          <section class="buttons">
-            <button type="button" class="form-button study-btn" value="study"><img src="assets/study.svg" alt="light-bulb" class="study-passive">Study</button>
-            <button type="button" class="form-button meditate-btn" value="meditate"><img src="assets/meditate.svg" alt="crown" class="meditate-passive">Meditate</button>
-            <button type="button" class="form-button exercise-btn" value="exercise"><img src="assets/exercise.svg" alt="sneaker" class="exercise-passive">Exercise</button>
-          </section>
-          <section class="acco">
-            <label for="accomplishment">What would you like to accomplish during this time?</label>
-            <input type="text" name="accomplishment" id="accomplishment" class="input-field">
-          </section>
-          <section class="time">
-            <section class="min">
-              <label for="minutes">Minutes</label>
-              <input type="number" name="minutes" id="minutes" class="input-field">
-            </section>
-            <section class="sec">
-              <label for="seconds">Seconds</label>
-              <input type="number" name="seconds" id="seconds" class="input-field">
-            </section>
-          </section class="start-btn-container">
-            <input type="submit" value="START ACTIVITY" class="start-btn">
         </form>
       </div>
     </section>
-    <hr>
-    <section class="saved-activities">
-      <h2>Past Activities</h2>
-      <!-- <section class="card-type">
-          <section class="card">
-            <section class="selected-type">Meditate</section>
-            <section class="selected-time">2 MINUTES 5 SECONDS</section>
-            <section class="selected-activity">user-activity</section>
-          </section>
-          <p class="border-line"></p>
-      </section>    -->
-      <section class="default-words">
-        <p>You haven't logged any activities yet.</p>
-        <p>Complete the form to the left to get started!</p>
-      </section>
-    </section>
-  </main>
-  <script src="activity.js"></script>
-  <script src="main.js"></script>
-</body>
+    </main>
+    <script src="activity.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
