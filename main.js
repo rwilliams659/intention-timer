@@ -138,6 +138,7 @@ function createActivityInstance(event) {
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
   displayTimerInput(activity);
+  logActivity()
   //call function to display the new view for timer
 }
 
@@ -153,7 +154,6 @@ function logActivity() {
   var defaultWords = document.querySelector(".default-words");
   var loggedActivitiesSection = document.querySelector(".logged-activities");
   defaultWords.classList.add("hidden");
-  // loggedActivitiesSection.innerText = "";
   for (var i = 0; i < activityData.length; i++) {
   var newLoggedActivity = `
   <section class="card-type">
