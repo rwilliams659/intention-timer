@@ -4,12 +4,17 @@ var minutesInput = document.getElementById('minutes');
 var secondsInput = document.getElementById('seconds');
 var accomplishmentInput = document.getElementById('accomplishment');
 var startTimerBtn = document.querySelector(".timer-button");
+var timer = document.querySelector('.timer');
+var newActivityHeading = document.querySelector('.new-activity');
+var activityForm = document.querySelector('.form');
+var currentActivityHeading = document.querySelector('.current-activity');
+var createNewActivBtn = document.querySelector(".create-new-activity");
 var activityData = [];
 var category = '';
 
 //Consider refactoring the below into 1 event listener by adding a common class to the minutes & seconds input fields
-minutesInput.addEventListener('keydown', formNumberValidation)
-secondsInput.addEventListener('keydown', formNumberValidation)
+minutesInput.addEventListener('keydown', formNumberValidation);
+secondsInput.addEventListener('keydown', formNumberValidation);
 newActivitySection.addEventListener('click', clickHandler);
 
 function clickHandler(event) {
@@ -27,6 +32,9 @@ function clickHandler(event) {
   if (event.target.classList.contains("log-btn")) {
     logActivity();
   }
+  if (event.target.classList.contains("create-new-activity")) {
+    returnToForm();
+  }
 }
 
 //should make seconds default equal to 0
@@ -38,10 +46,6 @@ function displayTimerInput(activity) {
 }
 
 function displayTimer() {
-  var newActivityHeading = document.querySelector('.new-activity');
-  var activityForm = document.querySelector('.form');
-  var currentActivityHeading = document.querySelector('.current-activity');
-  var timer = document.querySelector('.timer');
   newActivityHeading.classList.add('hidden');
   activityForm.classList.add('hidden');
   currentActivityHeading.classList.remove('hidden');
@@ -157,7 +161,7 @@ function logActivity() {
   var loggedActivitiesSection = document.querySelector(".logged-activities");
   defaultWords.classList.add("hidden");
   for (var i = 0; i < activityData.length; i++) {
-    // if (activityData[i].category === "study") {}
+    if (activityData[i].category === "study") {}
   var newLoggedActivity = `
   <section class="card-type">
       <section class="card">
@@ -169,7 +173,18 @@ function logActivity() {
     </section>
   `;
   loggedActivitiesSection.insertAdjacentHTML("afterbegin", newLoggedActivity);
+  timer.classList.add("hidden");
+  createNewActivBtn.classList.remove("hidden");
   }
+}
+
+function returnToForm() {
+  newActivityHeading.classList.remove('hidden');
+  activityForm.classList.remove('hidden');
+  currentActivityHeading.classList.add('hidden');
+  timer.classList.add('hidden');
+  createNewActivBtn.classList.add("hidden");
+
 }
 // work on making only one button accessable at a time
 // var meditateIcon = document.querySelector('.meditate-passive');
