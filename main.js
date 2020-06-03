@@ -38,7 +38,6 @@ function clickHandler(event) {
     logActivity();
   };
   if (event.target.classList.contains('create-new-activity')) {
-    // returnToForm();
     formAndTimerReset();
   };
 }
@@ -179,7 +178,6 @@ function resetTimer() {
   startTimerBtn.classList.remove('start-study-outline');
   startTimerBtn.classList.remove('start-meditate-outline');
   startTimerBtn.classList.remove('start-exercise-outline');
-
 }
 
 function returnToForm() {
