@@ -169,9 +169,9 @@ hr {
   height: 16px;
   width: 16px;
 }
-
+/*
 .timerCircle {
-}
+} */
 
 .timer {
   display: flex;
@@ -319,12 +319,7 @@ main {
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin-bottom: 0%;
   background: #2B2733;
-}
-
-.default-words {
-
 }
 
 .form-box {
@@ -356,7 +351,6 @@ main {
   width: 150px;
   height: 35px;
   font-size: 12px;
-
 }
 
 .meditate-btn {
@@ -431,6 +425,15 @@ main {
   margin: 10px;
   font-size: 14;
   width: 80%
+}
+
+.acco {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.input-field {
+  margin: 0;
 }
 
 hr {
