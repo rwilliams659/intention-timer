@@ -241,21 +241,24 @@ hr {
 }
 
 .border-line-study {
-  border-right: 3px solid #B3FD78;;
+  border-right: 4.5px solid #B3FD78;;
   height: 30px;
   margin: 10px;
+  border-radius: 10%;
 }
 
 .border-line-meditate {
-  border-right: 3px solid #C278FD;
+  border-right: 4.5px solid #C278FD;
   height: 30px;
   margin: 10px;
+  border-radius: 10%;
 }
 
 .border-line-exercise {
-  border-right: 3px solid #FD8078;;
+  border-right: 4.5px solid #FD8078;;
   height: 30px;
   margin: 10px;
+  border-radius: 10%;
 }
 
 .create-new-activity {

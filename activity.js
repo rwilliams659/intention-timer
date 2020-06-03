@@ -9,6 +9,7 @@ class Activity {
   }
 
   startTimer() {
+    startTimerBtn.disabled = true;
     var _this = this;
     var totalTime = (this.minutes * 60) + this.seconds;
     var intervalId = setInterval(function() {
@@ -31,7 +32,7 @@ class Activity {
   }
 
   markComplete() {
-    var finishMessages = ['COMPLETE!', 'YOU DID IT!', 'NICE JOB!'];
+    var finishMessages = ['COMPLETE!', 'YOU DID IT!', 'NICE JOB!', 'YOU\'RE AMAZING!', 'GREAT WORK!', 'KEEP IT UP!'];
     var randomMessage = finishMessages[Math.floor(Math.random() * finishMessages.length)];
     startTimerBtn.innerText = `${randomMessage}`;
     logBtn.classList.remove('hidden')
