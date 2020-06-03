@@ -9,6 +9,7 @@ outline-color: #2B2733;
 body {
   background-color: #46424D;
   margin: 0;
+  height: 100%;
 }
 
 header {
@@ -26,9 +27,9 @@ main {
 }
 
 h2 {
-    color: #CBC9CF;
-    padding-top: 1em;
-    padding-left: 1em;
+  color: #CBC9CF;
+  padding-top: 1em;
+  padding-left: 1em;
 }
 
 .new-activities-section {
@@ -234,6 +235,7 @@ hr {
   margin: 10px;
   font-size: 14;
 }
+
 .selected-type {
   font-weight: bolder;
 }
@@ -276,12 +278,20 @@ hr {
 
 @media only screen and (max-width: 1280px) {
 
-#line {
-  display: none;
+main {
+ display: flex;
+ flex-direction: column;
+}
+
+hr {
+  border: 1px solid #46424D;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%
 }
 }
 
-@media only screen and (max-width: 650px) and (orientation: portrait) {
+@media only screen and (max-width: 825px) {
 
 .body {
   display: flex;
@@ -300,14 +310,21 @@ main {
 .new-activities-section {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  padding-bottom: 100px;
+  width: 50%;
 }
 
 .saved-activities {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0%;
+  background: #2B2733;
+}
+
+.default-words {
+
 }
 
 .form-box {
@@ -374,9 +391,53 @@ main {
   float: center;
 }
 
-#form {
+.log-btn {
+  height: 35px;
+  width: 100%;
+  border-radius: 5%;
+  font-size: 14px;
+  float: center;
+  margin-bottom: 10px;
+}
+
+.create-new-activity {
+  height: 35px;
+  width: 100%;
+  border-radius: 5%;
+  font-size: 14px;
+  float: center;
+  margin-bottom: 100px;
+}
+
+.timer {
+  margin-bottom: 75px;
+}
+
+.card-type {
   display: flex;
+  justify-content: space-between;
+  color: #FFF;
+  background-color: #46424D;
+  border-radius: 5% 5%;
+  margin: 15px;
+  width: 80%;
+}
+
+.card {
+  display: flex;
+  flex: wrap;
   flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  font-size: 14;
+  width: 80%
+}
+
+hr {
+  border: 1px solid #46424D;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%
 }
 }
 
