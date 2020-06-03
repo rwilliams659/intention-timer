@@ -52,17 +52,17 @@ h2 {
 }
 
 .form-button {
-   width: 8rem;
-   background: transparent;
-   border: 1.5px solid white;
-   border-radius: 5%;
-   color: white;
-   font-size: 14px;
-   height: 60px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+  width: 8rem;
+  background: transparent;
+  border: 1.5px solid white;
+  border-radius: 5%;
+  color: white;
+  font-size: 14px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .study-btn-active {
@@ -105,9 +105,9 @@ label {
 }
 
 .time {
- display: flex;
- justify-content: space-between;
- padding-bottom: 4em;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4em;
 }
 
 .min {
@@ -249,9 +249,9 @@ hr {
 }
 
 .border-line-meditate {
-border-right: 3px solid #C278FD;
-height: 30px;
-margin: 10px;
+  border-right: 3px solid #C278FD;
+  height: 30px;
+  margin: 10px;
 }
 
 .border-line-exercise {
@@ -272,6 +272,112 @@ margin: 10px;
 .new-act-sec {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 1280px) {
+
+#line {
+  display: none;
+}
+}
+
+@media only screen and (max-width: 650px) and (orientation: portrait) {
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.new-activities-section {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding-bottom: 100px;
+}
+
+.saved-activities {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.form label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.study-btn {
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 35px;
+  font-size: 12px;
+
+}
+
+.meditate-btn {
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 35px;
+  font-size: 12px;
+}
+
+.exercise-btn {
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 35px;
+  font-size: 12px;
+}
+
+.buttons img {
+  height: 22px;
+  width: 22px;
+  margin-right: 10px;
+}
+
+.start-btn {
+  height: 35px;
+  width: 100%;
+  border-radius: 5%;
+  font-size: 14px;
+  float: center;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
 }
 
 /* if we have time later lets resize the fonts of the form to be 400*/
