@@ -3,6 +3,7 @@
 }
 
 *:focus {
+  outline: thin dotted;
 outline-color: #2B2733;
 }
 
@@ -66,7 +67,7 @@ h2 {
 }
 
 .study-btn-active {
-  border: 1.5px solid #B3FD78;
+  border-color: #B3FD78;
   color: #B3FD78;
 }
 

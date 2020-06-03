@@ -68,13 +68,13 @@ function replaceTimerDisplay(activity) {
 
 function changeOutlineColor() {
   var timerBtn = document.querySelector('.timer-button');
-  if (category === "study") {
+  if (category === "Study") {
     timerBtn.classList.add('start-study-outline')
   }
-  if (category === "meditate") {
+  if (category === "Meditate") {
     timerBtn.classList.add('start-meditate-outline')
   }
-  if (category === "exercise") {
+  if (category === "Exercise") {
     timerBtn.classList.add('start-exercise-outline')
   }
 }
@@ -139,6 +139,7 @@ function createActivityInstance(event) {
   var userSeconds = parseInt(document.getElementById("seconds").value);
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(activity);
+  activityForm.reset();
   displayTimerInput(activity);
 }
 
@@ -154,7 +155,7 @@ function logActivity() {
   loggedActivitiesSection.innerHTML = "";
   defaultWords.classList.add("hidden");
   for (var i = 0; i < activityData.length; i++) {
-    if (activityData[i].category === "study") {}
+    // if (activityData[i].category === "Study") {}
   var newLoggedActivity = `
   <section class="card-type">
       <section class="card">
