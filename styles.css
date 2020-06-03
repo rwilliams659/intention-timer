@@ -3,7 +3,8 @@
 }
 
 *:focus {
-outline-color: #2B2733;
+  outline: thin dotted;
+  outline-color: #2B2733;
 }
 
 body {
@@ -26,16 +27,16 @@ main {
 }
 
 h2 {
-    color: #CBC9CF;
-    padding-top: 1em;
-    padding-left: 1em;
+  color: #CBC9CF;
+  padding-top: 1em;
+  padding-left: 1em;
 }
 
 .new-activities-section {
   width: 66%;
 }
 
-.form-box {
+  .form-box {
   background-color: #46424D;
   margin: 20px;
   padding: 3rem 5rem 5rem 5rem;
@@ -66,7 +67,7 @@ h2 {
 }
 
 .study-btn-active {
-  border: 1.5px solid #B3FD78;
+  border-color: #B3FD78;
   color: #B3FD78;
 }
 
@@ -246,9 +247,9 @@ hr {
 }
 
 .border-line-meditate {
-border-right: 3px solid #C278FD;
-height: 30px;
-margin: 10px;
+  border-right: 3px solid #C278FD;
+  height: 30px;
+  margin: 10px;
 }
 
 .border-line-exercise {
