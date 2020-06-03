@@ -38,7 +38,7 @@ function clickHandler(event) {
     logActivity();
   };
   if (event.target.classList.contains('create-new-activity')) {
-    returnToForm();
+    formAndTimerReset();
   };
 }
 
@@ -72,23 +72,19 @@ function replaceTimerDisplay(activity) {
 }
 
 function changeOutlineColor() {
-  var timerBtn = document.querySelector('.timer-button');
   if (category === 'Study') {
-    timerBtn.classList.add('start-study-outline');
+    startTimerBtn.classList.add('start-study-outline');
   };
   if (category === 'Meditate') {
-    timerBtn.classList.add('start-meditate-outline');
+    startTimerBtn.classList.add('start-meditate-outline');
   };
   if (category === 'Exercise') {
-    timerBtn.classList.add('start-exercise-outline');
+    startTimerBtn.classList.add('start-exercise-outline');
   };
 }
 
 function validateForm() {
   event.preventDefault();
-  startTimerBtn.innerText = 'START ACTIVITY';
-  changeOutlineColor();
-  logBtn.classList.add('hidden');
   var categoryError = document.querySelector('.category-error');
   var accomplishmentError = document.querySelector('.accomplishment-error');
   var minutesError = document.querySelector('.minutes-error');
@@ -168,6 +164,20 @@ function logActivity() {
     timer.classList.add('hidden');
     createNewActivBtn.classList.remove('hidden');
   };
+}
+
+function formAndTimerReset() {
+  returnToForm();
+  resetTimer();
+}
+
+function resetTimer() {
+  startTimerBtn.innerText = 'START ACTIVITY';
+  startTimerBtn.disabled = false;
+  logBtn.classList.add('hidden');
+  startTimerBtn.classList.remove('start-study-outline');
+  startTimerBtn.classList.remove('start-meditate-outline');
+  startTimerBtn.classList.remove('start-exercise-outline');
 }
 
 function returnToForm() {
