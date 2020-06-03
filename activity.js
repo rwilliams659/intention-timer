@@ -8,12 +8,6 @@ class Activity {
     this.id = Date.now();
   }
 
-  //Class should maintain as class variable time remaining
-  //startTimer (setInterval) should only update the amount of time remaining
-  //Then it should call function to update display
-
-
-
   startTimer() {
     var _this = this;
     var totalTime = (this.minutes * 60) + this.seconds;
@@ -32,19 +26,17 @@ class Activity {
       if (totalTime === 0) {
         clearInterval(intervalId);
         _this.markComplete();
-      }
+      };
     }, 1000);
   }
 
   markComplete() {
-    var logBtn = document.querySelector(".log-btn");
     var finishMessages = ['COMPLETE!', 'YOU DID IT!', 'NICE JOB!'];
     var randomMessage = finishMessages[Math.floor(Math.random() * finishMessages.length)];
     startTimerBtn.innerText = `${randomMessage}`;
-    logBtn.classList.remove("hidden")
-
+    logBtn.classList.remove('hidden')
+    this.completed = true;
   }
-
 
   saveToStorage() {
 
