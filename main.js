@@ -112,7 +112,7 @@ function validateForm() {
     };
     if (minutesInput.value === '') {
       minutesError.innerHTML = `
-        <p><img src="assets/warning.svg" class="warning-image"/> A time is required.</p>
+        <p><img src="assets/warning.svg" class="warning-image"/> A valid time is required.</p>
       `;
     };
     if (secondsInput.value === '' || secondsInput.value >= 60) {
