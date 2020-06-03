@@ -27,11 +27,11 @@ Next, we were tasked with creating an Activity class, with pre-defined propertie
 
 This portion of the project involved several steps. First, we added functionality to the form by making each category button change border, text, and icon color when clicked, to the colors specified in our project brief.
 
-<img src="readme-assets/Timer-iter2-button-color.png" alt="form-button-colors" width="800"/>\
+<img src="readme-assets/Timer-Iter2-button-color.png" alt="form-button-colors" width="800"/>\
 
 Next, we added several form validation functions. The first disables any character that is not a number from being entered in the minutes and seconds form fields. The second checks to see if all of the form fields have an input, and if not, checks each individually and inserts error messages for those missing a value.
 
-<img src="readme-assets/Timer-iter2-error-messages.png" alt="form-error-messages" width="800"/>\
+<img src="readme-assets/Timer-Iter2-error-messages.png" alt="form-error-messages" width="800"/>\
 
 When a user has filled out all fields and clicks the "Start Activity" button, their information is stored as an instance of our Activity class. Additionally, that button click triggers a timer clock to display in place of the form. The timer clock has a circle outline that matches the color of the selected category, and displays the user-provided description and time.
 
