@@ -10,6 +10,7 @@
 body {
   background-color: #46424D;
   margin: 0;
+  height: 100%;
 }
 
 header {
@@ -53,17 +54,17 @@ h2 {
 }
 
 .form-button {
-   width: 8rem;
-   background: transparent;
-   border: 1.5px solid white;
-   border-radius: 5%;
-   color: white;
-   font-size: 14px;
-   height: 60px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+  width: 8rem;
+  background: transparent;
+  border: 1.5px solid white;
+  border-radius: 5%;
+  color: white;
+  font-size: 14px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .study-btn-active {
@@ -106,9 +107,9 @@ label {
 }
 
 .time {
- display: flex;
- justify-content: space-between;
- padding-bottom: 4em;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 4em;
 }
 
 .min {
@@ -232,6 +233,7 @@ hr {
   margin: 10px;
   font-size: 14;
 }
+
 .selected-type {
   font-weight: bolder;
 }
@@ -270,6 +272,174 @@ hr {
 .new-act-sec {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 1280px) {
+
+main {
+ display: flex;
+ flex-direction: column;
+}
+
+hr {
+  border: 1px solid #46424D;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%
+}
+}
+
+@media only screen and (max-width: 825px) {
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.new-activities-section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.saved-activities {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #2B2733;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.form label{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.study-btn {
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 35px;
+  font-size: 12px;
+}
+
+.meditate-btn {
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 35px;
+  font-size: 12px;
+}
+
+.exercise-btn {
+  display:flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  width: 150px;
+  height: 35px;
+  font-size: 12px;
+}
+
+.buttons img {
+  height: 22px;
+  width: 22px;
+  margin-right: 10px;
+}
+
+.start-btn {
+  height: 35px;
+  width: 100%;
+  border-radius: 5%;
+  font-size: 14px;
+  float: center;
+}
+
+.log-btn {
+  height: 35px;
+  width: 100%;
+  border-radius: 5%;
+  font-size: 14px;
+  float: center;
+  margin-bottom: 10px;
+}
+
+.create-new-activity {
+  height: 35px;
+  width: 100%;
+  border-radius: 5%;
+  font-size: 14px;
+  float: center;
+  margin-bottom: 100px;
+}
+
+.timer {
+  margin-bottom: 75px;
+}
+
+.card-type {
+  display: flex;
+  justify-content: space-between;
+  color: #FFF;
+  background-color: #46424D;
+  border-radius: 5% 5%;
+  margin: 15px;
+  width: 80%;
+}
+
+.card {
+  display: flex;
+  flex: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  font-size: 14;
+  width: 80%
+}
+
+.acco {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.input-field {
+  margin: 0;
+}
+
+hr {
+  border: 1px solid #46424D;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%
+}
 }
 
 /* if we have time later lets resize the fonts of the form to be 400*/
