@@ -39,7 +39,7 @@ class Activity {
     this.completed = true;
   }
 
-  saveToStorage() {
-
+  saveToStorage(activity, activityData) {
+    localStorage.setItem('activities', JSON.stringify(activityData));
   }
 }

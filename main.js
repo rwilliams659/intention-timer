@@ -11,11 +11,20 @@ var activityForm = document.querySelector('.form');
 var currentActivityHeading = document.querySelector('.current-activity');
 var createNewActivBtn = document.querySelector('.create-new-activity');
 var logBtn = document.querySelector('.log-btn');
-var activityData = [];
+if (localStorage.getItem('activities') === null) {
+  var activityData = [];
+} else {
+  var activityData = JSON.parse(localStorage.getItem('activities'))
+}
 var category = '';
 
 timeInput.addEventListener('keydown', formNumberValidation);
 newActivitySection.addEventListener('click', clickHandler);
+document.addEventListener('DOMContentLoaded', returnData);
+
+function returnData() {
+  var locallyStoredCards = JSON.parse(localStorage.getItem('activities'));
+}
 
 function keydownHandler(event) {
   if (event.target.classList.contains('minutes') || event.target.classList.contains('seconds')) {
@@ -139,9 +148,12 @@ function createActivityInstance(event) {
   var userMinutes = parseInt(document.getElementById('minutes').value);
   var userSeconds = parseInt(document.getElementById('seconds').value);
   var activity = new Activity(category, userDescription, userMinutes, userSeconds);
+  // console.log(activityData.classList);
   activityData.push(activity);
+  // console.log(activityData);
   activityForm.reset();
   displayTimerInput(activity);
+  activity.saveToStorage(activity, activityData);
 }
 
 function logActivity() {
