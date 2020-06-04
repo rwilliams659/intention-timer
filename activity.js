@@ -17,13 +17,13 @@ class Activity {
       totalTime --;
       var min = Math.floor(totalTime/60);
       if (min < 10) {
-        min = '0' + min
+        min = '0' + min;
       };
       var sec = totalTime%60;
       if (sec < 10) {
         sec = '0' + sec;
       };
-      timer.innerText = `${min}:${sec}`
+      timer.innerText = `${min}:${sec}`;
       if (totalTime === 0) {
         clearInterval(intervalId);
         _this.markComplete();
@@ -35,13 +35,11 @@ class Activity {
     var finishMessages = ['COMPLETE!', 'YOU DID IT!', 'NICE JOB!', 'YOU\'RE AMAZING!', 'GREAT WORK!', 'KEEP IT UP!'];
     var randomMessage = finishMessages[Math.floor(Math.random() * finishMessages.length)];
     startTimerBtn.innerText = `${randomMessage}`;
-    logBtn.classList.remove('hidden')
+    logBtn.classList.remove('hidden');
     this.completed = true;
   }
 
   saveToStorage() {
-    //NEW ITER 5
     localStorage.setItem('ActivitiesStored', JSON.stringify(activityData));
-    console.log('ActivitiesStored');
   }
 }

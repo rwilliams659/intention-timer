@@ -15,9 +15,7 @@ var activityData = [];
 var currentActivity = activityData[activityData.length - 1];
 var category = '';
 
-//NEW ITER5
 window.onload = retrieveFromStorage();
-//
 timeInput.addEventListener('keydown', formNumberValidation);
 newActivitySection.addEventListener('click', clickHandler);
 
@@ -35,13 +33,10 @@ function clickHandler(event) {
     validateForm();
   };
   if (event.target.classList.contains('timer-button')) {
-    //BELOW MOVED TO GLOBAL
-    // var currentActivity = activityData[activityData.length - 1];
     currentActivity.startTimer();
   };
   if (event.target.classList.contains('log-btn')) {
     logActivity();
-    //MAY NEED TO CALL ADDTL FUNCTION HERE ITER 5
     showCreateNewActivityButton();
   };
   if (event.target.classList.contains('create-new-activity')) {
@@ -49,7 +44,6 @@ function clickHandler(event) {
   };
 }
 
-//NEW ITER 5
 function retrieveFromStorage() {
   activityData = JSON.parse(localStorage.getItem('ActivitiesStored')) || [];
   for (var i = 0; i < activityData.length; i++) {
@@ -57,7 +51,6 @@ function retrieveFromStorage() {
   };
   logActivity();
 }
-//
 
 function displayTimerInput(activity) {
   displayTimer();
@@ -155,10 +148,8 @@ function createActivityInstance(event) {
   var userDescription = document.getElementById('accomplishment').value;
   var userMinutes = parseInt(document.getElementById('minutes').value);
   var userSeconds = parseInt(document.getElementById('seconds').value);
-  //ALTER BELOW TO USE GLOBAL VAR CURRENTACTIVITY
   currentActivity = new Activity(category, userDescription, userMinutes, userSeconds);
   activityData.push(currentActivity);
-  //NEW LINE BELOW ITER5
   currentActivity.saveToStorage();
   activityForm.reset();
   displayTimerInput(currentActivity);
@@ -181,9 +172,6 @@ function logActivity() {
       </section>
     `;
     loggedActivitiesSection.insertAdjacentHTML('afterbegin', newLoggedActivity);
-    //Moved to separate function just below: ITER 5
-    // timer.classList.add('hidden');
-    // createNewActivBtn.classList.remove('hidden');
   };
 }
 
