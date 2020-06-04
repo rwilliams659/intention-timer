@@ -12,8 +12,12 @@ var currentActivityHeading = document.querySelector('.current-activity');
 var createNewActivBtn = document.querySelector('.create-new-activity');
 var logBtn = document.querySelector('.log-btn');
 var activityData = [];
+var currentActivity = activityData[activityData.length - 1];
 var category = '';
 
+//NEW ITER5
+window.onload = retrieveFromStorage();
+//
 timeInput.addEventListener('keydown', formNumberValidation);
 newActivitySection.addEventListener('click', clickHandler);
 
@@ -31,16 +35,29 @@ function clickHandler(event) {
     validateForm();
   };
   if (event.target.classList.contains('timer-button')) {
-    var currentActivity = activityData[activityData.length - 1];
+    //BELOW MOVED TO GLOBAL
+    // var currentActivity = activityData[activityData.length - 1];
     currentActivity.startTimer();
   };
   if (event.target.classList.contains('log-btn')) {
     logActivity();
+    //MAY NEED TO CALL ADDTL FUNCTION HERE ITER 5
+    showCreateNewActivityButton();
   };
   if (event.target.classList.contains('create-new-activity')) {
     formAndTimerReset();
   };
 }
+
+//NEW ITER 5
+function retrieveFromStorage() {
+  activityData = JSON.parse(localStorage.getItem('ActivitiesStored')) || [];
+  for (var i = 0; i < activityData.length; i++) {
+    activityData[i] = new Activity(activityData[i].category, activityData[i].description, activityData[i].minutes, activityData[i].seconds);
+  };
+  logActivity();
+}
+//
 
 function displayTimerInput(activity) {
   displayTimer();
@@ -138,10 +155,13 @@ function createActivityInstance(event) {
   var userDescription = document.getElementById('accomplishment').value;
   var userMinutes = parseInt(document.getElementById('minutes').value);
   var userSeconds = parseInt(document.getElementById('seconds').value);
-  var activity = new Activity(category, userDescription, userMinutes, userSeconds);
-  activityData.push(activity);
+  //ALTER BELOW TO USE GLOBAL VAR CURRENTACTIVITY
+  currentActivity = new Activity(category, userDescription, userMinutes, userSeconds);
+  activityData.push(currentActivity);
+  //NEW LINE BELOW ITER5
+  currentActivity.saveToStorage();
   activityForm.reset();
-  displayTimerInput(activity);
+  displayTimerInput(currentActivity);
 }
 
 function logActivity() {
@@ -161,9 +181,15 @@ function logActivity() {
       </section>
     `;
     loggedActivitiesSection.insertAdjacentHTML('afterbegin', newLoggedActivity);
-    timer.classList.add('hidden');
-    createNewActivBtn.classList.remove('hidden');
+    //Moved to separate function just below: ITER 5
+    // timer.classList.add('hidden');
+    // createNewActivBtn.classList.remove('hidden');
   };
+}
+
+function showCreateNewActivityButton() {
+  timer.classList.add('hidden');
+  createNewActivBtn.classList.remove('hidden');
 }
 
 function formAndTimerReset() {

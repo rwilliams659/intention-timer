@@ -40,6 +40,8 @@ class Activity {
   }
 
   saveToStorage() {
-
+    //NEW ITER 5
+    localStorage.setItem('ActivitiesStored', JSON.stringify(activityData));
+    console.log('ActivitiesStored');
   }
 }
